@@ -1,0 +1,56 @@
+// Theme variables
+$bg: rgb(250, 248, 240); //f9fafb
+$surface: #ffffff;
+$text: #222222;//#111827;
+$muted: #6b7280;
+$accent: #fd0;
+$accent-600: #f5c400;
+$glass: rgba(255, 255, 255, 0.6);
+$radius: 14px;
+$shadow-sm: 0 6px 18px rgba(16, 24, 40, 0.06);
+$container: 1200px;
+
+//mobile
+$breakpoint-mobile: 768px;
+$nav-height: 65px;
+$nav-bg: #1E1E23;
+$menu-bg: #F5F6FA;
+$bar-color: #ffffff;
+$bar-active: #36383F;
+$menu-shadow: 0 6px 18px rgba(0,0,0,0.12);
+$menu-width: 220px;
+$animation-duration: 420ms;
+$bezier: cubic-bezier(0.77, 0.2, 0.05, 1);
+
+$title-gradient: linear-gradient(
+  125deg,
+  hsl(46deg 100% 49%) 0%,
+  hsl(32deg 99% 57%) 6%,
+  hsl(18deg 91% 60%) 12%,
+  hsl(2deg 71% 60%) 18%,
+  hsl(345deg 52% 50%) 24%,
+  hsl(331deg 53% 40%) 29%,
+  hsl(313deg 46% 30%) 35%,
+  hsl(280deg 42% 24%) 41%,
+  hsl(241deg 43% 18%) 47%,
+  hsl(221deg 81% 12%) 53%,
+  hsl(220deg 77% 12%) 59%,
+  hsl(220deg 72% 12%) 65%,
+  hsl(220deg 66% 11%) 71%,
+  hsl(221deg 61% 11%) 76%,
+  hsl(221deg 55% 11%) 82%,
+  hsl(221deg 50% 11%) 88%,
+  hsl(221deg 45% 11%) 94%,
+  hsl(221deg 39% 11%) 100%
+);
+
+$gradient-right: linear-gradient(
+  to right,
+  rgba(250, 248, 240, 0) 0%,
+  rgba(250, 248, 240, 1) 100%
+);
+$gradient-left: linear-gradient(
+  to left,
+  rgba(250, 248, 240, 0) 0%,
+  rgba(250, 248, 240, 1) 100%
+);
