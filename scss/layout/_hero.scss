@@ -1,0 +1,109 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+
+  padding-block: clamp(32px, 6vw, 80px);
+  padding-bottom: 2rem;
+
+  &__subtitle {
+    display: none;
+  }
+
+  // --- Mobile Layout Reordering (< 768px) ---
+  // We use 'display: contents' on the wrapper to let children participate in the main grid
+  &__content {
+    display: contents;
+  }
+
+  // Explicit Order for Mobile Grid Items
+  // 1. H1
+  h1 {
+    order: 1;
+    font-size: clamp(32px, 5vw, 60px); // Min 32px
+    // margin-bottom: 10px;
+    text-align: left;
+  }
+
+  // 2. Image
+  &__image {
+    order: 2;
+    margin-block: 40px;
+
+    // Flex to center image in its cell
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 60vh;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  // 3. P text
+  p {
+    order: 3;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  // 4. Actions
+  &__actions {
+    order: 4;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  // --- Tablet & Desktop Layout (>= 768px) ---
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 1fr;
+    gap: $gap;
+    // padding-inline: 48px; // Tablet Margin
+    text-align: left;
+
+    &__subtitle {
+      display: block;
+      font-family: $font-secondary;
+      font-weight: $font-weight-medium;
+      font-size: 42px;
+    }
+
+    // Reset wrapper to block so it contains H1/P/Actions in one cell
+    &__content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    // Reset orders? No need, 'order' property on children is ignored
+    // because their parent is now display:block (not grid/flex).
+    // The grid items are now: 1. .hero__content, 2. .hero__image (source order)
+
+    // Adjust H1 for larger screens if needed
+    h1 {
+      margin-bottom: 10px;
+      font-size: clamp(40px, 4vw, 60px);
+    }
+
+    &__actions {
+      justify-content: flex-start;
+      margin-top: auto;
+    }
+
+    &__image {
+      order: unset; // Reset order just in case
+      margin-bottom: 0;
+      justify-content: center;
+    }
+  }
+}

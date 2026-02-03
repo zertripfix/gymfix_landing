@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.main {
+  display: grid;
+
+  gap: clamp(3rem, 8vw, 5rem);
+
+  @include container;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5.25vw, 2.5rem);
+}

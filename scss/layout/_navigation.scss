@@ -1,0 +1,138 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+nav {
+  height: 68px;
+  display: flex;
+
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $color-bg;
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    @include container;
+  }
+
+  &.scrolled {
+    box-shadow: $shadow-sm;
+  }
+
+  // Navigation links container
+  .links-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: $gap;
+  }
+
+  a {
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: $color-text;
+    font-weight: $font-weight-medium;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: $color-accent;
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      height: clamp(40px, 5vw, 60px);
+      width: auto;
+    }
+  }
+
+  #sidebar-active {
+    display: none;
+  }
+
+  .open-sidebar-button,
+  .close-sidebar-button {
+    display: none;
+    cursor: pointer;
+    // padding: 0.5rem;
+  }
+}
+
+@media (max-width: $breakpoint-desktop) {
+  #nav-btn {
+    display: none;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  nav {
+    height: 56px;
+
+    #nav-btn {
+      display: block;
+    }
+
+    .links-container {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 10;
+      width: 250px;
+      background-color: $color-bg;
+      box-shadow: $shadow-sm;
+      transition: 0.35s ease-out;
+      padding-top: 60px;
+    }
+
+    a {
+      height: auto;
+      width: 100%;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+    }
+
+    .open-sidebar-button,
+    .close-sidebar-button {
+      display: block;
+    }
+
+    .close-sidebar-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+      right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

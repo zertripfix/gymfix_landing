@@ -1,143 +1,225 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gymfix</title>
-    <link rel="stylesheet" href="scss/styles.css" />
-  </head>
-  <body>
-    <div class="mobile-menu-items">
-      <div class="close-icon">
-        <img src="images/close.svg" alt="Close" />
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gymfix</title>
+  <link rel="stylesheet" href="scss/styles.css" />
+  <script type="text/javascript" src="app.js" defer></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <input type="checkbox" id="sidebar-active" />
+
+      <div class="logo">
+        <img src="images/logo.svg" alt="Gymfix" href="#" />
       </div>
-      <a href="#">O нас</a>
-      <a href="#">Услуги</a>
-      <a href="#">Почему</a>
-      <a href="#">Как это работает</a>
-      <a href="#">Контакты</a>
-      <a href="#" class="btn">Написать нам</a>
-    </div>
-    <div class="container">
-      <nav>
-        <div class="menu-icon">
-          <img src="images/menu.svg" alt="Menu" />
-        </div>
+      <label for="sidebar-active" id="overlay"></label>
+      <label for="sidebar-active" class="open-sidebar-button">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </label>
 
-        <div class="logo">
-          <img src="logo.png" alt="Gymfix" href="#" />
-        </div>
+      <div class="links-container">
+        <label for="sidebar-active" class="close-sidebar-button">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"
+              fill="#0F0F0F" />
+          </svg>
+        </label>
 
-        <div class="menu-items">
-          <a href="#">O нас</a>
-          <a href="#">Услуги</a>
-          <a href="#">Почему</a>
-          <a href="#">Как это работает</a>
-          <a href="#">Контакты</a>
-          <a href="#" class="btn">Написать нам</a>
-        </div>
-      </nav>
-
-      <!-- End of Navbar -->
-
-      <header>
-        <div class="left">
-          <h1>Ваш тренажёр снова в форме</h1>
-          <p class="sub-heading">
-            Чиним беговые дорожки, эллипсы, велотренажёры и силовые станции. Все
-            бренды и модели. Быстро, надёжно и с гарантией.
-          </p>
-
-          <div class="buttons">
-            <h2><a href="#" class="btn">Оставить заявку</a></h2>
-            <h2><a href="#" class="btn outlined">Позвонить</a></h2>
-          </div>
-        </div>
-
-        <div class="right">
-          <img src="images/hero.png" alt="Gymfix" />
-        </div>
-      </header>
-    </div>
-
-    <!-- End of Hero -->
-
-    <div class="logos">
-      <div class="logos-slide">
-        <img src="images/logos/bowflex.svg" alt="Logo" />
-        <img src="images/logos/cybex-international.svg" alt="Logo" />
-        <img src="images/logos/hammer-strength.svg" alt="Logo" />
-        <img src="images/logos/life-fitness.svg" alt="Logo" />
-        <img src="images/logos/nautilus-logo.svg" alt="Logo" />
-        <img src="images/logos/nordictrack.svg" alt="Logo" />
-        <img src="images/logos/precor.svg" alt="Logo" />
-        <img src="images/logos/star-trac.svg" alt="Logo" />
-        <img src="images/logos/technogym.svg" alt="Logo" />
-      </div>
-      <div class="logos-slide">
-        <img src="images/logos/bowflex.svg" alt="Logo" />
-        <img src="images/logos/cybex-international.svg" alt="Logo" />
-        <img src="images/logos/hammer-strength.svg" alt="Logo" />
-        <img src="images/logos/life-fitness.svg" alt="Logo" />
-        <img src="images/logos/nautilus-logo.svg" alt="Logo" />
-        <img src="images/logos/nordictrack.svg" alt="Logo" />
-        <img src="images/logos/precor.svg" alt="Logo" />
-        <img src="images/logos/star-trac.svg" alt="Logo" />
-        <img src="images/logos/technogym.svg" alt="Logo" />
+        <a href="#">Послуги</a>
+        <a href="#">Про нас</a>
+        <a href="#">Контакти</a>
+        <a href="#" class="btn secondary" id="nav-btn">Викликати майстра</a>
       </div>
     </div>
+  </nav>
 
-    <!--End of Featured-->
+  <main class="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__content">
 
-    <section class="services-section">
-      <div class="container">
-        <div class="heading-container">
-          <h2>Услуги</h2>
-          <p>
-            Ремонт и обслуживание любых домашних и профессиональных тренажеров
-          </p>
+        <h1>Професійний ремонт тренажерів</h1>
+        <p class="hero__subtitle">швидко. якісно. з гарантією.</p>
+        <p>
+          Ремонт і обслуговування домашніх та професійних тренажерів будь-якої складності. Від діагностики до повного
+          відновлення працездатності.
+        </p>
+
+        <div class="hero__actions">
+          <button class="btn primary">Залишити заявку</button>
         </div>
-        <div class="services-container">
-          <div class="service">
-            <img src="/images/tredmil.png" alt="Беговая дорожка" />
-            <div class="content">
-              <h3>Беговая дорожка</h3>
-              <p>
-                Ремонт и обслуживание любых домашних и профессиональных
-                тренажеров
-              </p>
-            </div>
-          </div>
-        </div>
+      </div>
+      <div class="hero__image">
+        <img src="images/hero.svg" alt="Product preview" />
       </div>
     </section>
-    <!-- <section class="repair-section">
-      <div class="container">
-        <h2>Что мы ремонтируем</h2>
-        <p>
-          Ремонт и обслуживание любых домашних и профессиональных тренажеров
-        </p>
-        <div class="cards">
-          <div class="card">
-            <img src="/images/tredmill.png" alt="Беговая дорожка" />
-            <h3>Беговая дорожка</h3>
+
+    <!-- Brands Carousel -->
+    <section class="brands-carousel">
+      <div class="brands-carousel__track">
+        <!-- Original Set -->
+        <div class="brands-carousel__item"><img src="images/logos/life-fitness.svg" alt="Life Fitness"></div>
+        <div class="brands-carousel__item"><img src="images/logos/technogym.svg" alt="Technogym"></div>
+        <div class="brands-carousel__item"><img src="images/logos/precor.svg" alt="Precor"></div>
+        <div class="brands-carousel__item"><img src="images/logos/hammer-strength.svg" alt="Hammer Strength"></div>
+        <div class="brands-carousel__item"><img src="images/logos/star-trac.svg" alt="Star Trac"></div>
+        <div class="brands-carousel__item"><img src="images/logos/cybex-international.svg" alt="Cybex"></div>
+        <div class="brands-carousel__item"><img src="images/logos/nautilus-logo.svg" alt="Nautilus"></div>
+        <div class="brands-carousel__item"><img src="images/logos/nordictrack.svg" alt="NordicTrack"></div>
+        <div class="brands-carousel__item"><img src="images/logos/bowflex.svg" alt="Bowflex"></div>
+
+        <!-- Duplicate Set for Seamless Loop -->
+        <div class="brands-carousel__item"><img src="images/logos/life-fitness.svg" alt="Life Fitness"></div>
+        <div class="brands-carousel__item"><img src="images/logos/technogym.svg" alt="Technogym"></div>
+        <div class="brands-carousel__item"><img src="images/logos/precor.svg" alt="Precor"></div>
+        <div class="brands-carousel__item"><img src="images/logos/hammer-strength.svg" alt="Hammer Strength"></div>
+        <div class="brands-carousel__item"><img src="images/logos/star-trac.svg" alt="Star Trac"></div>
+        <div class="brands-carousel__item"><img src="images/logos/cybex-international.svg" alt="Cybex"></div>
+        <div class="brands-carousel__item"><img src="images/logos/nautilus-logo.svg" alt="Nautilus"></div>
+        <div class="brands-carousel__item"><img src="images/logos/nordictrack.svg" alt="NordicTrack"></div>
+        <div class="brands-carousel__item"><img src="images/logos/bowflex.svg" alt="Bowflex"></div>
+      </div>
+    </section>
+
+    <!-- What we repair -->
+    <div class="section-wrapper">
+      <section class="heading-subheading">
+        <div class="label yellow">Що ми ремонтуємо</div>
+        <p>Домашні та професійні тренажери різних типів і призначення.</p>
+      </section>
+
+      <!-- Cards -->
+      <section class="trainers-grid">
+
+        <div class="trainer-card grey" id="treadmills-card">
+          <div class="trainer-card__heading">
+            <div class="trainer-card__labels">
+              <div class="label yellow">Бігові</div>
+              <div class="label yellow">Доріжки</div>
+            </div>
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon">
+              <p>Дізнатись більше</p>
+            </div>
           </div>
-          <div class="card">
-            <img src="elliptical.png" alt="Эллиптический тренажёр" />
-            <h3>Эллиптический тренажёр</h3>
-          </div>
-          <div class="card">
-            <img src="bike.png" alt="Велотренажёр" />
-            <h3>Велотренажёр</h3>
-          </div>
-          <div class="card">
-            <img src="gym.png" alt="Силовая станция" />
-            <h3>Силовая станция</h3>
+
+          <div class="trainer-card__image">
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon">
+            </div>
+            <img src="images/trainers/treadmill.svg" alt="Product preview" />
           </div>
         </div>
-      </div>
-    </section> -->
 
-    <script src="main.js"></script>
-  </body>
+        <div class="trainer-card yellow" id="station-card">
+          <div class="trainer-card__heading">
+            <div class="trainer-card__labels">
+              <div class="label">Силові та блочні</div>
+              <div class="label">тренажери</div>
+            </div>
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon-label__icon">
+              <p>Дізнатись більше</p>
+            </div>
+          </div>
+
+          <div class="trainer-card__image">
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon">
+            </div>
+            <img src="images/trainers/station.svg" alt="Product preview" />
+          </div>
+        </div>
+
+        <div class="trainer-card yellow" id="elliptical-card">
+          <div class="trainer-card__heading">
+            <div class="trainer-card__labels">
+              <div class="label">Еліптичні</div>
+              <div class="label">тренажери</div>
+            </div>
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon-label__icon">
+              <p>Дізнатись більше</p>
+            </div>
+          </div>
+
+          <div class="trainer-card__image">
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon">
+            </div>
+            <img src="images/trainers/elliptical.svg" alt="Product preview" />
+          </div>
+        </div>
+
+        <div class="trainer-card grey" id="bicycle-card">
+          <div class="trainer-card__heading">
+            <div class="label yellow">Велотренажери</div>
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon-label__icon">
+              <p>Дізнатись більше</p>
+            </div>
+          </div>
+
+          <div class="trainer-card__image">
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon">
+            </div>
+            <img src="images/trainers/bicycle.svg" alt="Product preview" />
+          </div>
+
+        </div>
+
+        <div class="trainer-card grey" id="stepper-card">
+          <div class="trainer-card__heading">
+            <div class="label yellow">Степпери</div>
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon-label__icon">
+              <p>Дізнатись більше</p>
+            </div>
+          </div>
+          <div class="trainer-card__image">
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon">
+            </div>
+            <img src="images/trainers/stepper.svg" alt="Product preview" />
+          </div>
+        </div>
+
+        <div class="trainer-card yellow" id="other-card">
+          <div class="trainer-card__heading">
+            <div class="trainer-card__labels">
+              <div class="label">Інше</div>
+              <div class="label">обладнання</div>
+            </div>
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon-label__icon">
+              <p>Дізнатись більше</p>
+            </div>
+          </div>
+
+          <div class="trainer-card__image">
+            <div class="icon-label">
+              <img src="images/link.svg" alt="link" class="icon">
+            </div>
+            <img src="images/trainers/other.svg" alt="Product preview" />
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">© 2026 GymFix. All rights reserved.</footer>
+</body>
+
 </html>

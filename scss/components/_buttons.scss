@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn {
+  @include button-base;
+
+  &.primary {
+    background: $color-accent;
+    color: $color-black;
+    box-shadow: $shadow-bold;
+
+    @include hover-active-bold-effect;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+    }
+  }
+
+  &.secondary {
+    background: $color-bg;
+    color: $color-text;
+    border: 1px solid $color-dark;
+    width: fit-content;
+    align-self: center;
+    height: fit-content;
+
+    @media (hover: hover) {
+      &:hover {
+        // filter: brightness(0.85);
+        background-color: $color-accent;
+        // transform: scale(1.05);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+      filter: brightness(0.85);
+      background-color: $color-accent;
+    }
+  }
+}
