@@ -1,10 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a,
@@ -16,6 +20,14 @@ textarea {
   -webkit-user-select: none;
   -moz-user-select: none;
        user-select: none;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #fd0;
+  outline-offset: 2px;
 }
 
 body {
@@ -274,79 +286,6 @@ nav .close-sidebar-button {
   }
 }
 
-.trainer-card {
-  display: flex;
-  flex-direction: row;
-  max-width: 36.25rem;
-  border: 1px solid #191a23;
-  box-shadow: 5px 5px 0px 0 #191a23;
-  padding: clamp(2rem, 4vw, 3.125rem);
-  border-radius: 45px;
-  transition: all 0.1s ease-in-out;
-}
-@media (hover: hover) {
-  .trainer-card:hover {
-    transform: scale(1.01);
-    filter: brightness(1.15);
-  }
-}
-.trainer-card:active {
-  transform: translate(5px, 5px);
-  filter: brightness(0.85);
-  box-shadow: none;
-}
-.trainer-card__heading {
-  display: flex;
-  flex-direction: column;
-}
-.trainer-card__image {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
-  height: clamp(160px, 12vw, 208px);
-}
-.trainer-card__image img {
-  width: auto;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  display: block;
-}
-.trainer-card__image .icon-label {
-  display: none;
-}
-.trainer-card.grey {
-  background: #F3F3F3;
-}
-.trainer-card.yellow {
-  background: #FFFC99;
-}
-@media (max-width: 1024px) {
-  .trainer-card {
-    flex-direction: column;
-    justify-content: space-between;
-    gap: clamp(1rem, 1vw, 1.25rem);
-  }
-  .trainer-card__heading {
-    display: contents;
-  }
-  .trainer-card__heading .icon-label {
-    display: none;
-  }
-  .trainer-card__labels {
-    justify-self: start;
-    align-self: start;
-  }
-  .trainer-card__image {
-    margin-left: 0;
-    justify-content: space-between;
-  }
-  .trainer-card__image .icon-label {
-    display: block;
-    justify-self: start;
-  }
-}
-
 .trainers-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -591,7 +530,7 @@ nav .close-sidebar-button {
   border-radius: 30px;
   text-decoration: none;
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
   font-family: "Montserrat Alternates", sans-serif;
 }
 .reviews-container .google-summary .google-btn:hover {
@@ -736,6 +675,79 @@ nav .close-sidebar-button {
   background-color: #fd0;
 }
 
+.trainer-card {
+  display: flex;
+  flex-direction: row;
+  max-width: 36.25rem;
+  border: 1px solid #191a23;
+  box-shadow: 5px 5px 0px 0 #191a23;
+  padding: clamp(2rem, 4vw, 3.125rem);
+  border-radius: 45px;
+  transition: all 0.1s ease-in-out;
+}
+@media (hover: hover) {
+  .trainer-card:hover {
+    transform: scale(1.01);
+    filter: brightness(1.15);
+  }
+}
+.trainer-card:active {
+  transform: translate(5px, 5px);
+  filter: brightness(0.85);
+  box-shadow: none;
+}
+.trainer-card__heading {
+  display: flex;
+  flex-direction: column;
+}
+.trainer-card__image {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  height: clamp(160px, 12vw, 208px);
+}
+.trainer-card__image img {
+  width: auto;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+.trainer-card__image .icon-label {
+  display: none;
+}
+.trainer-card.grey {
+  background: #f3f3f3;
+}
+.trainer-card.yellow {
+  background: #fffc99;
+}
+@media (max-width: 1024px) {
+  .trainer-card {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(1rem, 1vw, 1.25rem);
+  }
+  .trainer-card__heading {
+    display: contents;
+  }
+  .trainer-card__heading .icon-label {
+    display: none;
+  }
+  .trainer-card__labels {
+    justify-self: start;
+    align-self: start;
+  }
+  .trainer-card__image {
+    margin-left: 0;
+    justify-content: space-between;
+  }
+  .trainer-card__image .icon-label {
+    display: block;
+    justify-self: start;
+  }
+}
+
 .label {
   display: flex;
   justify-content: start;
@@ -750,7 +762,7 @@ nav .close-sidebar-button {
   font-weight: 500;
 }
 .label.yellow {
-  background: #FFFC99;
+  background: #fffc99;
 }
 
 .icon-label {

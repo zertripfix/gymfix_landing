@@ -4,17 +4,15 @@
 nav {
   height: 68px;
   display: flex;
-
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: $z-nav;
   background-color: $color-bg;
 
   .nav-container {
     display: flex;
     align-items: center;
-
     justify-content: space-between;
 
     @include container;
@@ -24,7 +22,6 @@ nav {
     box-shadow: $shadow-sm;
   }
 
-  // Navigation links container
   .links-container {
     height: 100%;
     display: flex;
@@ -41,7 +38,7 @@ nav {
     align-items: center;
     color: $color-text;
     font-weight: $font-weight-medium;
-    transition: background-color 0.2s ease;
+    @include transition-base(background-color);
 
     &:hover {
       background-color: $color-accent;
@@ -65,7 +62,6 @@ nav {
   .close-sidebar-button {
     display: none;
     cursor: pointer;
-    // padding: 0.5rem;
   }
 }
 
@@ -91,7 +87,7 @@ nav {
       position: fixed;
       top: 0;
       right: -100%;
-      z-index: 10;
+      z-index: $z-nav;
       width: 250px;
       background-color: $color-bg;
       box-shadow: $shadow-sm;
@@ -131,7 +127,7 @@ nav {
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 9;
+      z-index: $z-overlay;
       background-color: rgba(0, 0, 0, 0.5);
     }
   }

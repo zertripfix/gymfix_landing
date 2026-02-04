@@ -1,7 +1,7 @@
 // ==============================
 // Global design variables
 // ==============================
-@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 // Font families
 $font-primary: "Montserrat Alternates", sans-serif;
@@ -16,7 +16,7 @@ $font-weight-bold: 700;
 // Maximum content width
 $max-width: 1200px;
 
-// Breakpoints 
+// Breakpoints
 $breakpoint-mobile: 560px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
@@ -28,7 +28,7 @@ $gap: clamp(2rem, 3vw, 2.5rem);
 $font-base: clamp(1rem, 1.2vw, 1.125rem);
 $font-lg: clamp(2rem, 4vw, 3.75rem);
 
-// Color palette
+// Color palette - Main
 $color-bg: #f9fafb; // Page background
 $color-surface: #ffffff; // Cards / surfaces
 $color-text: #222222; // Main text
@@ -36,13 +36,42 @@ $color-accent: #fd0; // CTA / highlight
 $color-glass: rgba(255, 255, 255, 0.6); // Glassmorphism background
 $color-dark: #191a23;
 $color-black: #000;
-$color-label-yellow: #FFFC99;
+
+// Color palette - Labels & Cards
+$color-label-yellow: #fffc99;
 $color-label-white: #ffffff;
-$color-card-yellow: #FFFC99;
-$color-card-grey: #F3F3F3;
+$color-card-yellow: #fffc99;
+$color-card-grey: #f3f3f3;
 
+// Color palette - Reviews section
+$color-reviews-bg: #0f0f0f;
+$color-reviews-card-bg: #3c3d42;
+$color-reviews-text: #e8eaed;
+$color-reviews-text-muted: #9aa0a6;
+$color-reviews-link: #f29900;
 
-//Shadow
+// Color palette - Google brand colors
+$color-google-blue: #4285f4;
+$color-google-red: #db4437;
+$color-google-yellow: #f4b400;
+$color-google-green: #0f9d58;
+
+// Shadows
 $shadow-sm: 0 6px 18px rgba(16, 24, 40, 0.06);
 $shadow-bold: 5px 5px 0px 0 #191a23;
 
+// Border radius
+$radius-sm: 7px;
+$radius-md: 20px;
+$radius-lg: 30px;
+$radius-xl: 40px;
+$radius-xxl: 45px;
+
+// Transitions
+$transition-fast: 0.1s ease-in-out;
+$transition-base: 0.2s ease;
+$transition-slow: 0.3s ease;
+
+// Z-index scale
+$z-overlay: 9;
+$z-nav: 10;

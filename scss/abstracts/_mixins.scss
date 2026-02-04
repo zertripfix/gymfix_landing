@@ -58,10 +58,36 @@
   transition: all 0.1s ease-in-out;
 }
 
-//Glassmorphism mixin
+// Glassmorphism mixin
 @mixin glassmorphism {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   background-color: $color-glass;
-  // box-shadow: $shadow-sm;
+}
+
+// Transition mixin for consistent animations
+@mixin transition-base($property: all, $duration: $transition-base) {
+  transition: $property $duration;
+}
+
+// Flex center utility
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Hide scrollbar while maintaining scroll functionality
+@mixin scrollbar-hide {
+  scrollbar-width: none; // Firefox
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+}
+
+// Text truncate with ellipsis
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

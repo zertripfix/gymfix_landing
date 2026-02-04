@@ -1,3 +1,4 @@
+@use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
 .brands-carousel {
@@ -6,7 +7,6 @@
   overflow: hidden;
   position: relative;
 
-  // Fade masks for smooth edges
   &::before,
   &::after {
     content: "";
@@ -44,17 +44,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // Ensure logos have consistent size
     height: 40px;
 
     img {
       height: 100%;
       width: auto;
       object-fit: contain;
-      // Make logos slightly muted until hover
       opacity: 0.6;
       filter: grayscale(100%);
-      transition: all 0.3s ease;
+      @include transition-base(all, $transition-slow);
 
       &:hover {
         opacity: 1;
@@ -69,11 +67,6 @@
     transform: translateX(0);
   }
   100% {
-    // We'll duplicate the logos list once, so we scroll by 50% of the total width
-    // Actually, for a seamless loop of 2 identical sets, we scroll -50% if the container holds exactly 2 sets
-    // However, to be safe and generic, let's assume valid HTML structure:
-    // We need to scroll by the width of ONE set of items.
-    // A common trick is: 2 sets of items. transform -50% works if the track is exactly 2 sets wide.
     transform: translateX(-50%);
   }
 }

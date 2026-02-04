@@ -76,7 +76,7 @@
       color: rgba($color-text, 0.8);
       text-decoration: none;
       font-weight: 500;
-      transition: all 0.2s ease;
+      @include transition-base(all);
       font-size: 0.95rem;
 
       &:hover {

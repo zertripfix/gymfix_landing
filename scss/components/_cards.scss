@@ -9,13 +9,11 @@
   @include hover-active-bold-effect;
 
   &__heading {
-    // grid-area: heading;
     display: flex;
     flex-direction: column;
   }
 
   &__image {
-    // grid-area: image;
     display: flex;
     justify-content: center;
     margin-left: auto;
@@ -42,8 +40,6 @@
   }
 
   @media (max-width: $breakpoint-desktop) {
-    // grid-template-columns: 1fr;
-    // grid-template-areas: "labels" "bottom";
     flex-direction: column;
     justify-content: space-between;
     gap: clamp(1rem, 1vw, 1.25rem);
@@ -57,7 +53,6 @@
     }
 
     &__labels {
-      // grid-area: labels;
       justify-self: start;
       align-self: start;
     }
