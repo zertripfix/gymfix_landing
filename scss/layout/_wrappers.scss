@@ -14,3 +14,10 @@
   flex-direction: column;
   gap: clamp(2rem, 5.25vw, 2.5rem);
 }
+
+.section-wrapper-scroll {
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5.25vw, 2.5rem);
+}

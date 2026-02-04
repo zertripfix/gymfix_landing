@@ -189,6 +189,13 @@ nav .close-sidebar-button {
   gap: clamp(2rem, 5.25vw, 2.5rem);
 }
 
+.section-wrapper-scroll {
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5.25vw, 2.5rem);
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1fr;
@@ -424,6 +431,175 @@ nav .close-sidebar-button {
     transform: translateX(-50%);
   }
 }
+.reviews-container {
+  background-color: #0f0f0f;
+  border-radius: 40px;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  color: white;
+  font-family: "Montserrat Alternates", sans-serif;
+  margin-top: 1rem;
+}
+.reviews-container .google-summary {
+  background-color: #3c3d42;
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+@media (max-width: 560px) {
+  .reviews-container .google-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.reviews-container .google-summary__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.reviews-container .google-summary__logo-row {
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.reviews-container .google-summary__logo-row .company-name {
+  font-family: "Product Sans", sans-serif;
+  letter-spacing: -0.5px;
+}
+.reviews-container .google-summary__logo-row .company-name .blue {
+  color: #4285f4;
+}
+.reviews-container .google-summary__logo-row .company-name .red {
+  color: #db4437;
+}
+.reviews-container .google-summary__logo-row .company-name .yellow {
+  color: #f4b400;
+}
+.reviews-container .google-summary__logo-row .company-name .green {
+  color: #0f9d58;
+}
+.reviews-container .google-summary__rating-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.reviews-container .google-summary__rating-row .rating-val {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.reviews-container .google-summary__rating-row .stars {
+  color: #f4b400;
+  letter-spacing: 2px;
+}
+.reviews-container .google-summary .google-btn {
+  background-color: #f4b400;
+  color: black;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.reviews-container .google-summary .google-btn:hover {
+  opacity: 0.9;
+}
+@media (max-width: 560px) {
+  .reviews-container .google-summary .google-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.reviews-container .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.reviews-container .reviews-grid::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 768px) {
+  .reviews-container .reviews-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: scroll;
+  }
+}
+.reviews-container .review-card {
+  scroll-snap-align: start;
+  background-color: #3c3d42;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.reviews-container .review-card__header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.reviews-container .review-card__header .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.reviews-container .review-card__header .avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reviews-container .review-card__header .meta {
+  display: flex;
+  flex-direction: column;
+}
+.reviews-container .review-card__header .meta .name {
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+}
+.reviews-container .review-card__header .meta .date {
+  font-size: 0.875rem;
+  color: #9aa0a6;
+}
+.reviews-container .review-card .stars {
+  color: #f4b400;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+}
+.reviews-container .review-card .review-text {
+  color: #e8eaed;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+.reviews-container .review-card .read-more {
+  color: #f29900;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+.reviews-container .review-card .read-more:hover {
+  text-decoration: underline;
+}
+
 .btn {
   padding: 0.75em 1.25em;
   font-size: 1rem;
@@ -509,6 +685,7 @@ nav .close-sidebar-button {
   flex-direction: row;
   align-items: center;
   gap: clamp(2rem, 3.5vw, 2.5rem);
+  margin-top: 5rem;
 }
 @media (max-width: 1024px) {
   .heading-subheading {
