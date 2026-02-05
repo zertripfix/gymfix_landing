@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  #why-us-card-1 {
+    border-bottom: $border-dashed;
+    border-right: $border-dashed;
+  }
+  #why-us-card-2 {
+    border-bottom: $border-dashed;
+    border-right: $border-dashed;
+  }
+  #why-us-card-3 {
+    border-bottom: $border-dashed;
+  }
+  #why-us-card-4 {
+    border-right: $border-dashed;
+  }
+  #why-us-card-5 {
+    border-right: $border-dashed;
+  }
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(1, 1fr);
+    #why-us-card-1 {
+      border-bottom: $border-dashed;
+      border-right: 0;
+    }
+    #why-us-card-2 {
+      border-bottom: $border-dashed;
+      border-right: none;
+    }
+    #why-us-card-4 {
+      border-right: none;
+      border-bottom: $border-dashed;
+    }
+    #why-us-card-5 {
+      border-bottom: $border-dashed;
+      border-right: none;
+    }
+  }
+}

@@ -15,7 +15,8 @@ a,
 button,
 input,
 select,
-textarea {
+textarea,
+.trainer-card {
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -25,7 +26,8 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
-textarea:focus-visible {
+textarea:focus-visible,
+.trainer-card:focus-visible {
   outline: 2px solid #fd0;
   outline-offset: 2px;
 }
@@ -95,7 +97,7 @@ nav .links-container {
   align-items: center;
   gap: clamp(2rem, 3vw, 2.5rem);
 }
-nav a {
+nav .nav-link {
   height: 100%;
   padding: 0 20px;
   text-decoration: none;
@@ -103,16 +105,26 @@ nav a {
   align-items: center;
   color: #222222;
   font-weight: 500;
+  border-radius: 7px;
   transition: background-color 0.2s ease;
 }
-nav a:hover {
+nav .nav-link:hover {
+  background-color: #fd0;
+}
+nav .nav-link.active {
   background-color: #fd0;
 }
 nav .logo {
   display: flex;
   align-items: center;
 }
+nav .logo .logo-link {
+  display: inline-block;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 nav .logo img {
+  display: block;
   height: clamp(40px, 5vw, 60px);
   width: auto;
 }
@@ -152,13 +164,13 @@ nav .close-sidebar-button {
     transition: 0.35s ease-out;
     padding-top: 60px;
   }
-  nav a {
+  nav .nav-link {
     height: auto;
     width: 100%;
     padding: 1rem 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
-  nav a:hover {
+  nav .nav-link:active {
     background-color: rgba(0, 0, 0, 0.02);
   }
   nav .open-sidebar-button,
@@ -200,12 +212,8 @@ nav .close-sidebar-button {
   flex-direction: column;
   gap: clamp(2rem, 5.25vw, 2.5rem);
 }
-
-.section-wrapper-scroll {
+.section-wrapper.scrollable {
   overflow-x: auto;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2rem, 5.25vw, 2.5rem);
 }
 
 .hero {
@@ -327,7 +335,7 @@ nav .close-sidebar-button {
 @media (max-width: 768px) {
   .footer__grid {
     grid-template-columns: 1fr;
-    text-align: left; /* Keep left align usually looks better for lists, or center if desired */
+    text-align: left;
     gap: 3rem;
   }
 }
@@ -461,7 +469,6 @@ nav .close-sidebar-button {
   padding: clamp(1.5rem, 3vw, 3rem);
   color: white;
   font-family: "Montserrat Alternates", sans-serif;
-  margin-top: 1rem;
 }
 .reviews-container .google-summary {
   background-color: #3c3d42;
@@ -624,6 +631,233 @@ nav .close-sidebar-button {
   text-decoration: underline;
 }
 
+.contact {
+  padding: clamp(2rem, 3vw, 2.5rem) 0;
+}
+.contact__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  background: #191a23;
+  border-radius: 45px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+@media (min-width: 1024px) {
+  .contact__container {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 5vw, 4rem);
+  }
+}
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  color: #ffffff;
+}
+.contact__title {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  color: #ffffff;
+}
+.contact__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.contact__icon {
+  flex-shrink: 0;
+  width: clamp(3rem, 5vw, 4rem);
+  height: clamp(3rem, 5vw, 4rem);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.contact__icon svg {
+  width: 24px;
+  height: 24px;
+}
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.contact__label {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+}
+.contact__value {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  color: #ffffff;
+}
+.contact__socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+.contact__social-link {
+  width: clamp(3rem, 5vw, 3.5rem);
+  height: clamp(3rem, 5vw, 3.5rem);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+.contact__social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+.contact__social-link svg {
+  width: 24px;
+  height: 24px;
+}
+.contact__form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+}
+.contact__input, .contact__textarea {
+  width: 100%;
+  padding: clamp(0.875rem, 2vw, 1.125rem) clamp(1rem, 2.5vw, 1.5rem);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #ffffff;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.contact__input::-moz-placeholder, .contact__textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.contact__input::placeholder, .contact__textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.contact__input:focus, .contact__textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.contact__input:hover, .contact__textarea:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.contact__textarea {
+  resize: vertical;
+  min-height: clamp(120px, 20vw, 150px);
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.contact__submit {
+  width: 100%;
+  margin-top: clamp(0.5rem, 1vw, 1rem);
+  padding: clamp(0.875rem, 2vw, 1.125rem) clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid #fd0;
+}
+.contact__submit:hover {
+  transform: translateY(-2px);
+}
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 3vw, 2.5rem);
+  width: 100%;
+  margin-inline: auto;
+}
+.stages-grid p {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+}
+@media (max-width: 560px) {
+  .stages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.arrow {
+  display: flex;
+  align-items: flex-end;
+}
+.arrow.left {
+  transform: scaleX(-1);
+}
+@media (max-width: 560px) {
+  .arrow {
+    display: none;
+  }
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.why-us-grid #why-us-card-1 {
+  border-bottom: 1px dashed #898989;
+  border-right: 1px dashed #898989;
+}
+.why-us-grid #why-us-card-2 {
+  border-bottom: 1px dashed #898989;
+  border-right: 1px dashed #898989;
+}
+.why-us-grid #why-us-card-3 {
+  border-bottom: 1px dashed #898989;
+}
+.why-us-grid #why-us-card-4 {
+  border-right: 1px dashed #898989;
+}
+.why-us-grid #why-us-card-5 {
+  border-right: 1px dashed #898989;
+}
+@media (max-width: 768px) {
+  .why-us-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .why-us-grid #why-us-card-1 {
+    border-bottom: 1px dashed #898989;
+    border-right: 0;
+  }
+  .why-us-grid #why-us-card-2 {
+    border-bottom: 1px dashed #898989;
+    border-right: none;
+  }
+  .why-us-grid #why-us-card-4 {
+    border-right: none;
+    border-bottom: 1px dashed #898989;
+  }
+  .why-us-grid #why-us-card-5 {
+    border-bottom: 1px dashed #898989;
+    border-right: none;
+  }
+}
+
 .btn {
   padding: 0.75em 1.25em;
   font-size: 1rem;
@@ -640,6 +874,7 @@ nav .close-sidebar-button {
 }
 @media (hover: hover) {
   .btn.primary:hover {
+    cursor: pointer;
     transform: scale(1.01);
     filter: brightness(1.15);
   }
@@ -674,11 +909,33 @@ nav .close-sidebar-button {
   filter: brightness(0.85);
   background-color: #fd0;
 }
+.btn.submit {
+  background: #191a23;
+  color: #fd0;
+  border: 2px solid #fd0;
+  font-weight: 600;
+  width: 100%;
+  align-self: center;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media (hover: hover) {
+  .btn.submit:hover {
+    background-color: #fd0;
+    color: #000;
+  }
+}
+.btn.submit:active {
+  transform: scale(0.95);
+  filter: brightness(0.85);
+  background-color: #fd0;
+}
 
 .trainer-card {
   display: flex;
   flex-direction: row;
   max-width: 36.25rem;
+  cursor: pointer;
   border: 1px solid #191a23;
   box-shadow: 5px 5px 0px 0 #191a23;
   padding: clamp(2rem, 4vw, 3.125rem);
@@ -687,6 +944,7 @@ nav .close-sidebar-button {
 }
 @media (hover: hover) {
   .trainer-card:hover {
+    cursor: pointer;
     transform: scale(1.01);
     filter: brightness(1.15);
   }
@@ -746,6 +1004,55 @@ nav .close-sidebar-button {
     display: block;
     justify-self: start;
   }
+}
+
+.stages-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 36.25rem;
+  gap: clamp(1rem, 1vw, 1.25rem);
+  background: #f3f3f3;
+  border: 1px solid #191a23;
+  box-shadow: 5px 5px 0px 0 #191a23;
+  padding: clamp(2rem, 4vw, 3.125rem);
+  border-radius: 45px;
+  transition: all 0.1s ease-in-out;
+}
+.stages-card__heading {
+  display: flex;
+  flex-direction: column;
+}
+.stages-card__icon-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.stages-card__icon-label {
+  font-size: 3.75rem;
+  font-weight: 500;
+  color: #191a23;
+  margin-right: auto;
+}
+.stages-card h3 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.why-us-card {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.625rem, 0.5vw, 1rem);
+  padding: 1.5rem;
+}
+.why-us-card img {
+  height: 32px;
+  width: 32px;
+}
+.why-us-card h3 {
+  font-size: clamp(1.125rem, 1vw, 1.25rem);
+}
+.why-us-card p {
+  font-size: clamp(1rem, 0.8vw, 1.125rem);
 }
 
 .label {

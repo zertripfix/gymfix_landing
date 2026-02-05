@@ -1,6 +1,5 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
-
 .label {
   display: flex;
   justify-content: start;
@@ -12,19 +11,16 @@
   border-radius: $radius-sm;
   font-size: clamp(1.5rem, 2vw, 1.875rem);
   font-weight: $font-weight-medium;
-
   &.yellow {
     background: $color-label-yellow;
   }
 }
-
 .icon-label {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
   margin-top: auto;
-
   .icon {
     width: 41px;
     height: 41px;

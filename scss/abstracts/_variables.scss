@@ -33,9 +33,9 @@ $color-bg: #f9fafb; // Page background
 $color-surface: #ffffff; // Cards / surfaces
 $color-text: #222222; // Main text
 $color-accent: #fd0; // CTA / highlight
-$color-glass: rgba(255, 255, 255, 0.6); // Glassmorphism background
 $color-dark: #191a23;
 $color-black: #000;
+$color-grey: #898989;
 
 // Color palette - Labels & Cards
 $color-label-yellow: #fffc99;
@@ -66,6 +66,9 @@ $radius-md: 20px;
 $radius-lg: 30px;
 $radius-xl: 40px;
 $radius-xxl: 45px;
+
+// Border styles
+$border-dashed: 1px dashed $color-grey;
 
 // Transitions
 $transition-fast: 0.1s ease-in-out;

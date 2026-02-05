@@ -1,21 +1,16 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
-
 .btn {
   @include button-base;
-
   &.primary {
     background: $color-accent;
     color: $color-black;
     box-shadow: $shadow-bold;
-
     @include hover-active-bold-effect;
-
     @media (max-width: $breakpoint-tablet) {
       width: 100%;
     }
   }
-
   &.secondary {
     background: $color-bg;
     color: $color-text;
@@ -23,13 +18,31 @@
     width: fit-content;
     align-self: center;
     height: fit-content;
-
     @media (hover: hover) {
       &:hover {
         background-color: $color-accent;
       }
     }
-
+    &:active {
+      transform: scale(0.95);
+      filter: brightness(0.85);
+      background-color: $color-accent;
+    }
+  }
+  &.submit {
+    background: $color-dark;
+    color: $color-accent;
+    border: 2px solid $color-accent;
+    font-weight: $font-weight-semibold;
+    width: 100%;
+    align-self: center;
+    height: fit-content;
+    @media (hover: hover) {
+      &:hover {
+        background-color: $color-accent;
+        color: $color-black;
+      }
+    }
     &:active {
       transform: scale(0.95);
       filter: brightness(0.85);

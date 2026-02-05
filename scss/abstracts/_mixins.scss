@@ -1,29 +1,16 @@
 @use "variables" as *;
-
-// ==============================
-// Layout & utility mixins
-// ==============================
-
-// Centers content and limits max width
-// Used by nav, main, etc.
 @mixin container {
   width: min(100%, $max-width);
   margin-inline: auto;
-
   @media (max-width: 1248px) {
     padding-inline: clamp(16px, 5vw, 48px);
   }
 }
-
-// Simple grid helper
-// $cols = number of columns
 @mixin grid($cols) {
   display: grid;
   grid-template-columns: repeat($cols, minmax(0, 1fr));
   gap: $gap;
 }
-
-// Base button styling
 @mixin button-base {
   padding: 0.75em 1.25em;
   font-size: 1rem;
@@ -31,25 +18,22 @@
   border: none;
   cursor: pointer;
   font-family: $font-primary;
-
   transition: all 0.1s ease-in-out;
 }
-
 @mixin hover-active-bold-effect {
   @media (hover: hover) {
     &:hover {
+      cursor: pointer;
       transform: scale(1.01);
       filter: brightness(1.15);
     }
   }
-
   &:active {
     transform: translate(5px, 5px);
     filter: brightness(0.85);
     box-shadow: none;
   }
 }
-
 @mixin card-bold-base {
   border: 1px solid $color-dark;
   box-shadow: $shadow-bold;
@@ -57,35 +41,20 @@
   border-radius: 45px;
   transition: all 0.1s ease-in-out;
 }
-
-// Glassmorphism mixin
-@mixin glassmorphism {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: $color-glass;
-}
-
-// Transition mixin for consistent animations
 @mixin transition-base($property: all, $duration: $transition-base) {
   transition: $property $duration;
 }
-
-// Flex center utility
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-// Hide scrollbar while maintaining scroll functionality
 @mixin scrollbar-hide {
-  scrollbar-width: none; // Firefox
+  scrollbar-width: none;
   &::-webkit-scrollbar {
-    display: none; // Chrome, Safari
+    display: none;
   }
 }
-
-// Text truncate with ellipsis
 @mixin text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;

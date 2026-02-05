@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $gap;
+  width: 100%;
+  margin-inline: auto;
+  p {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+.arrow {
+  display: flex;
+  align-items: flex-end;
+  &.left {
+    transform: scaleX(-1);
+  }
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}

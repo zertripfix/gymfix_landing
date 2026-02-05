@@ -1,16 +1,13 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
-
 .trainers-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: $gap;
   width: 100%;
   margin-inline: auto;
-
   @media (max-width: $breakpoint-mobile) {
     grid-template-columns: 1fr;
-
     #elliptical-card {
       grid-row: 4;
     }

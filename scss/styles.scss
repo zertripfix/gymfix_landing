@@ -5,11 +5,14 @@
 // Layout
 @use "layout/navigation";
 @use "layout/wrappers";
-@use "layout/hero";
-@use "layout/trainers";
+@use "sections/hero";
+@use "sections/trainers";
 @use "layout/footer";
-@use "layout/brands-carousel";
-@use "layout/reviews";
+@use "sections/brands-carousel";
+@use "sections/reviews";
+@use "sections/contact";
+@use "sections/stages";
+@use "sections/why-us";
 
 // Components
 @use "components/buttons";

@@ -7,9 +7,7 @@
   padding: clamp(1.5rem, 3vw, 3rem);
   color: white;
   font-family: $font-primary;
-  margin-top: 1rem;
 
-  // Google Summary Block
   .google-summary {
     background-color: $color-reviews-card-bg;
     border-radius: $radius-md;
@@ -40,7 +38,7 @@
       gap: 0.5rem;
 
       .company-name {
-        font-family: "Product Sans", sans-serif; // Fallback to sans-serif
+        font-family: "Product Sans", sans-serif;
         letter-spacing: -0.5px;
 
         .blue {

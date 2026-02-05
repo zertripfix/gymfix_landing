@@ -1,70 +1,101 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
-
 .trainer-card {
   display: flex;
   flex-direction: row;
   max-width: 36.25rem;
+  cursor: pointer;
   @include card-bold-base;
   @include hover-active-bold-effect;
-
   &__heading {
     display: flex;
     flex-direction: column;
   }
-
   &__image {
     display: flex;
     justify-content: center;
     margin-left: auto;
     height: clamp(160px, 12vw, 208px);
-
     img {
       width: auto;
       height: 100%;
       object-fit: contain;
       display: block;
     }
-
     .icon-label {
       display: none;
     }
   }
-
   &.grey {
     background: $color-card-grey;
   }
-
   &.yellow {
     background: $color-label-yellow;
   }
-
   @media (max-width: $breakpoint-desktop) {
     flex-direction: column;
     justify-content: space-between;
     gap: clamp(1rem, 1vw, 1.25rem);
-
     &__heading {
       display: contents;
-
       .icon-label {
         display: none;
       }
     }
-
     &__labels {
       justify-self: start;
       align-self: start;
     }
-
     &__image {
       margin-left: 0;
       justify-content: space-between;
-
       .icon-label {
         display: block;
         justify-self: start;
       }
     }
+  }
+}
+.stages-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 36.25rem;
+  gap: clamp(1rem, 1vw, 1.25rem);
+  background: $color-card-grey;
+  @include card-bold-base;
+  &__heading {
+    display: flex;
+    flex-direction: column;
+  }
+  &__icon-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__icon-label {
+    font-size: 3.75rem;
+    font-weight: $font-weight-medium;
+    color: $color-dark;
+    margin-right: auto;
+  }
+  h3 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+  }
+}
+.why-us-card {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.625rem, 0.5vw, 1rem);
+  padding: 1.5rem;
+  img {
+    height: 32px;
+    width: 32px;
+  }
+  h3 {
+    font-size: clamp(1.125rem, 1vw, 1.25rem);
+  }
+  p {
+    font-size: clamp(1rem, 0.8vw, 1.125rem);
   }
 }
