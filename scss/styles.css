@@ -21,6 +21,7 @@ textarea,
   -webkit-user-select: none;
   -moz-user-select: none;
        user-select: none;
+  text-decoration: none;
 }
 a:focus-visible,
 button:focus-visible,
@@ -125,7 +126,7 @@ nav .logo .logo-link {
 }
 nav .logo img {
   display: block;
-  height: clamp(40px, 5vw, 60px);
+  height: clamp(40px, 5vw, 50px);
   width: auto;
 }
 nav #sidebar-active {
@@ -402,7 +403,7 @@ nav .close-sidebar-button {
 }
 
 .brands-carousel {
-  padding: 40px 0;
+  padding: clamp(2rem, 3vw, 2.5rem) 0;
   background-color: var(--color-background);
   overflow: hidden;
   position: relative;
@@ -466,7 +467,7 @@ nav .close-sidebar-button {
 .reviews-container {
   background-color: #0f0f0f;
   border-radius: 40px;
-  padding: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(2rem, 4vw, 3.5rem);
   color: white;
   font-family: "Montserrat Alternates", sans-serif;
 }
@@ -642,9 +643,9 @@ nav .close-sidebar-button {
   border-radius: 45px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(2rem, 4vw, 3rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .contact__container {
     grid-template-columns: 1fr 1fr;
     gap: clamp(3rem, 5vw, 4rem);
@@ -653,8 +654,13 @@ nav .close-sidebar-button {
 .contact__info {
   display: flex;
   flex-direction: column;
-  gap: clamp(1.5rem, 3vw, 2rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
   color: #ffffff;
+}
+@media (max-width: 768px) {
+  .contact__info {
+    order: 2;
+  }
 }
 .contact__title {
   font-family: "Montserrat Alternates", sans-serif;
@@ -667,22 +673,17 @@ nav .close-sidebar-button {
 .contact__item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: clamp(0.5rem, 3vw, 1rem);
 }
 .contact__icon {
   flex-shrink: 0;
-  width: clamp(3rem, 5vw, 4rem);
-  height: clamp(3rem, 5vw, 4rem);
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-}
-.contact__icon svg {
-  width: 24px;
-  height: 24px;
+  padding: clamp(1rem, 1vw, 1.25rem);
 }
 .contact__details {
   display: flex;
@@ -705,12 +706,15 @@ nav .close-sidebar-button {
 }
 .contact__socials {
   display: flex;
-  gap: 1rem;
+  gap: clamp(1rem, 2vw, 2.5rem);
   margin-top: clamp(1rem, 2vw, 1.5rem);
 }
+@media (max-width: 560px) {
+  .contact__socials {
+    justify-content: space-between;
+  }
+}
 .contact__social-link {
-  width: clamp(3rem, 5vw, 3.5rem);
-  height: clamp(3rem, 5vw, 3.5rem);
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   display: flex;
@@ -718,14 +722,11 @@ nav .close-sidebar-button {
   justify-content: center;
   color: #ffffff;
   transition: all 0.2s ease;
+  padding: clamp(1rem, 1vw, 1.25rem);
 }
 .contact__social-link:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
-}
-.contact__social-link svg {
-  width: 24px;
-  height: 24px;
 }
 .contact__form-wrapper {
   display: flex;
@@ -733,8 +734,12 @@ nav .close-sidebar-button {
 }
 .contact__form {
   display: flex;
+  height: 100%;
   flex-direction: column;
   gap: clamp(1rem, 2vw, 1.25rem);
+  background: rgba(55, 58, 62, 0.4);
+  border-radius: 40px;
+  padding: clamp(1rem, 2vw, 1.25rem);
 }
 .contact__form-group {
   display: flex;
@@ -742,7 +747,7 @@ nav .close-sidebar-button {
 }
 .contact__input, .contact__textarea {
   width: 100%;
-  padding: clamp(0.875rem, 2vw, 1.125rem) clamp(1rem, 2.5vw, 1.5rem);
+  padding: clamp(0.875rem, 2vw, 1.25rem) clamp(1rem, 2.7vw, 1.875rem);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -766,23 +771,22 @@ nav .close-sidebar-button {
 .contact__input:hover, .contact__textarea:hover {
   border-color: rgba(255, 255, 255, 0.15);
 }
+.contact #message-form {
+  height: 100%;
+}
 .contact__textarea {
   resize: vertical;
-  min-height: clamp(120px, 20vw, 150px);
+  overflow-y: auto;
+  min-height: 150px;
+  height: 100%;
+  box-sizing: border-box;
   font-family: "Montserrat Alternates", sans-serif;
 }
-.contact__submit {
-  width: 100%;
-  margin-top: clamp(0.5rem, 1vw, 1rem);
-  padding: clamp(0.875rem, 2vw, 1.125rem) clamp(1.5rem, 3vw, 2rem);
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border: 2px solid #fd0;
-}
-.contact__submit:hover {
-  transform: translateY(-2px);
+@media (max-width: 560px) {
+  .contact img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .stages-grid {
@@ -913,6 +917,7 @@ nav .close-sidebar-button {
   background: #191a23;
   color: #fd0;
   border: 2px solid #fd0;
+  border-radius: 45px;
   font-weight: 600;
   width: 100%;
   align-self: center;
@@ -929,6 +934,7 @@ nav .close-sidebar-button {
   transform: scale(0.95);
   filter: brightness(0.85);
   background-color: #fd0;
+  color: #000;
 }
 
 .trainer-card {

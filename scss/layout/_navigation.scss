@@ -51,13 +51,14 @@ nav {
   .logo {
     display: flex;
     align-items: center;
+    // padding: 20px;
     .logo-link {
       display: inline-block;
       height: fit-content;
     }
     img {
       display: block;
-      height: clamp(40px, 5vw, 60px);
+      height: clamp(40px, 5vw, 50px);
       width: auto;
     }
   }

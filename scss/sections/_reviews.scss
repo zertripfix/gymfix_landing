@@ -4,7 +4,7 @@
 .reviews-container {
   background-color: $color-reviews-bg;
   border-radius: $radius-xl;
-  padding: clamp(1.5rem, 3vw, 3rem);
+  padding: $padding-container;
   color: white;
   font-family: $font-primary;
 

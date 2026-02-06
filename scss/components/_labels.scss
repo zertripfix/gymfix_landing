@@ -9,7 +9,7 @@
   background: $color-label-white;
   padding-inline: 7px;
   border-radius: $radius-sm;
-  font-size: clamp(1.5rem, 2vw, 1.875rem);
+  font-size: $h2-size-base;
   font-weight: $font-weight-medium;
   &.yellow {
     background: $color-label-yellow;

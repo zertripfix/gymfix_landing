@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 .brands-carousel {
-  padding: 40px 0;
+  padding: $gap 0;
   background-color: var(--color-background);
   overflow: hidden;
   position: relative;

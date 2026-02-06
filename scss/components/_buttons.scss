@@ -33,6 +33,7 @@
     background: $color-dark;
     color: $color-accent;
     border: 2px solid $color-accent;
+    border-radius: $radius-xxl;
     font-weight: $font-weight-semibold;
     width: 100%;
     align-self: center;
@@ -47,6 +48,7 @@
       transform: scale(0.95);
       filter: brightness(0.85);
       background-color: $color-accent;
+      color: $color-black;
     }
   }
 }

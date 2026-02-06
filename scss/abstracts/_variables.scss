@@ -56,6 +56,33 @@ $color-google-red: #db4437;
 $color-google-yellow: #f4b400;
 $color-google-green: #0f9d58;
 
+// Color palette - Utility
+$color-white-05: rgba(255, 255, 255, 0.05);
+$color-white-08: rgba(255, 255, 255, 0.08);
+$color-white-10: rgba(255, 255, 255, 0.1);
+$color-white-15: rgba(255, 255, 255, 0.15);
+$color-white-20: rgba(255, 255, 255, 0.2);
+$color-white-50: rgba(255, 255, 255, 0.5);
+$color-white-60: rgba(255, 255, 255, 0.6);
+$color-form-bg: rgba(55, 58, 62, 0.4);
+
+// Spacing scale
+$padding-container: clamp(2rem, 4vw, 3.5rem);
+$padding-card: clamp(2rem, 4vw, 3.125rem);
+$padding-input: clamp(0.875rem, 2vw, 1.25rem) clamp(1rem, 2.7vw, 1.875rem);
+$gap-xs: clamp(0.625rem, 0.5vw, 1rem);
+$gap-sm: clamp(1rem, 1vw, 1.25rem);
+$gap-md: clamp(1.5rem, 4vw, 3rem);
+$gap-lg: clamp(3rem, 5vw, 4rem);
+$gap-heading: clamp(2rem, 3.5vw, 2.5rem);
+$margin-section: 5rem;
+
+// Typography scale (Clamp values)
+$h1-size-base: clamp(32px, 5vw, 60px);
+$h1-size-tablet: clamp(40px, 4vw, 60px);
+$h2-size-base: clamp(1.5rem, 2vw, 1.875rem);
+$h3-size-base: clamp(1.25rem, 2.5vw, 1.5rem);
+
 // Shadows
 $shadow-sm: 0 6px 18px rgba(16, 24, 40, 0.06);
 $shadow-bold: 5px 5px 0px 0 #191a23;
