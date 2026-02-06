@@ -333,7 +333,7 @@ nav .close-sidebar-button {
   gap: clamp(2rem, 3vw, 2.5rem);
   margin-bottom: 3rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .footer__grid {
     grid-template-columns: 1fr;
     text-align: left;
@@ -467,7 +467,7 @@ nav .close-sidebar-button {
 .reviews-container {
   background-color: #0f0f0f;
   border-radius: 40px;
-  padding: clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(1.3rem, 4vw, 3.5rem);
   color: white;
   font-family: "Montserrat Alternates", sans-serif;
 }
@@ -563,7 +563,7 @@ nav .close-sidebar-button {
 .reviews-container .reviews-grid::-webkit-scrollbar {
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .reviews-container .reviews-grid {
     grid-template-columns: none;
     grid-auto-flow: column;
@@ -633,19 +633,18 @@ nav .close-sidebar-button {
 }
 
 .contact {
-  padding: clamp(2rem, 3vw, 2.5rem) 0;
+  padding-bottom: clamp(3rem, 8vw, 5rem);
 }
 .contact__container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(1.3rem, 4vw, 3.5rem);
   background: #191a23;
   border-radius: 45px;
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(1.5rem, 4vw, 3rem);
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .contact__container {
     grid-template-columns: 1fr 1fr;
     gap: clamp(3rem, 5vw, 4rem);
@@ -657,7 +656,7 @@ nav .close-sidebar-button {
   gap: clamp(1.5rem, 4vw, 3rem);
   color: #ffffff;
 }
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .contact__info {
     order: 2;
   }
@@ -708,11 +707,6 @@ nav .close-sidebar-button {
   display: flex;
   gap: clamp(1rem, 2vw, 2.5rem);
   margin-top: clamp(1rem, 2vw, 1.5rem);
-}
-@media (max-width: 560px) {
-  .contact__socials {
-    justify-content: space-between;
-  }
 }
 .contact__social-link {
   background: rgba(255, 255, 255, 0.1);
@@ -821,44 +815,35 @@ nav .close-sidebar-button {
 
 .why-us-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
-.why-us-grid #why-us-card-1 {
+.why-us-grid .card-bottom-border {
   border-bottom: 1px dashed #898989;
-  border-right: 1px dashed #898989;
+  margin-inline: 1.5rem;
 }
-.why-us-grid #why-us-card-2 {
-  border-bottom: 1px dashed #898989;
-  border-right: 1px dashed #898989;
-}
-.why-us-grid #why-us-card-3 {
-  border-bottom: 1px dashed #898989;
-}
-.why-us-grid #why-us-card-4 {
-  border-right: 1px dashed #898989;
-}
-.why-us-grid #why-us-card-5 {
-  border-right: 1px dashed #898989;
-}
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .why-us-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .why-us-grid .card-bottom-border {
+    display: none;
   }
   .why-us-grid #why-us-card-1 {
     border-bottom: 1px dashed #898989;
-    border-right: 0;
+    border-right: 1px dashed #898989;
   }
   .why-us-grid #why-us-card-2 {
     border-bottom: 1px dashed #898989;
-    border-right: none;
+    border-right: 1px dashed #898989;
+  }
+  .why-us-grid #why-us-card-3 {
+    border-bottom: 1px dashed #898989;
   }
   .why-us-grid #why-us-card-4 {
-    border-right: none;
-    border-bottom: 1px dashed #898989;
+    border-right: 1px dashed #898989;
   }
   .why-us-grid #why-us-card-5 {
-    border-bottom: 1px dashed #898989;
-    border-right: none;
+    border-right: 1px dashed #898989;
   }
 }
 
@@ -888,7 +873,7 @@ nav .close-sidebar-button {
   filter: brightness(0.85);
   box-shadow: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .btn.primary {
     width: 100%;
   }
@@ -1062,17 +1047,16 @@ nav .close-sidebar-button {
 }
 
 .label {
-  display: flex;
-  justify-content: start;
-  align-self: start;
   width: -moz-fit-content;
   width: fit-content;
-  flex-direction: row;
   background: #ffffff;
   padding-inline: 7px;
   border-radius: 7px;
-  font-size: clamp(1.5rem, 2vw, 1.875rem);
+  font-size: clamp(1.35rem, 2vw, 1.875rem);
   font-weight: 500;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  white-space: normal;
 }
 .label.yellow {
   background: #fffc99;
@@ -1110,5 +1094,6 @@ nav .close-sidebar-button {
   }
   .heading-subheading .label {
     align-self: center;
+    display: inline;
   }
 }/*# sourceMappingURL=styles.css.map */

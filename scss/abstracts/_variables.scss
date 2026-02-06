@@ -18,7 +18,7 @@ $max-width: 1200px;
 
 // Breakpoints
 $breakpoint-mobile: 560px;
-$breakpoint-tablet: 768px;
+$breakpoint-tablet: 769px;
 $breakpoint-desktop: 1024px;
 
 // Universal spacing between blocks
@@ -67,7 +67,7 @@ $color-white-60: rgba(255, 255, 255, 0.6);
 $color-form-bg: rgba(55, 58, 62, 0.4);
 
 // Spacing scale
-$padding-container: clamp(2rem, 4vw, 3.5rem);
+$padding-container: clamp(1.3rem, 4vw, 3.5rem);
 $padding-card: clamp(2rem, 4vw, 3.125rem);
 $padding-input: clamp(0.875rem, 2vw, 1.25rem) clamp(1rem, 2.7vw, 1.875rem);
 $gap-xs: clamp(0.625rem, 0.5vw, 1rem);
@@ -80,7 +80,7 @@ $margin-section: 5rem;
 // Typography scale (Clamp values)
 $h1-size-base: clamp(32px, 5vw, 60px);
 $h1-size-tablet: clamp(40px, 4vw, 60px);
-$h2-size-base: clamp(1.5rem, 2vw, 1.875rem);
+$h2-size-base: clamp(1.35rem, 2vw, 1.875rem);
 $h3-size-base: clamp(1.25rem, 2.5vw, 1.5rem);
 
 // Shadows

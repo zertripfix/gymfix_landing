@@ -1,16 +1,17 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 .label {
-  display: flex;
-  justify-content: start;
-  align-self: start;
+  
   width: fit-content;
-  flex-direction: row;
   background: $color-label-white;
   padding-inline: 7px;
   border-radius: $radius-sm;
   font-size: $h2-size-base;
   font-weight: $font-weight-medium;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  white-space: normal;
+
   &.yellow {
     background: $color-label-yellow;
   }

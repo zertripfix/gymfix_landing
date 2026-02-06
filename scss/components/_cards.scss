@@ -7,15 +7,18 @@
   cursor: pointer;
   @include card-bold-base;
   @include hover-active-bold-effect;
+
   &__heading {
     display: flex;
     flex-direction: column;
   }
+
   &__image {
     display: flex;
     justify-content: center;
     margin-left: auto;
     height: clamp(160px, 12vw, 208px);
+    
     img {
       width: auto;
       height: 100%;
@@ -56,6 +59,7 @@
     }
   }
 }
+
 .stages-card {
   display: flex;
   flex-direction: column;
@@ -63,26 +67,31 @@
   gap: $gap-sm;
   background: $color-card-grey;
   @include card-bold-base;
+
   &__heading {
     display: flex;
     flex-direction: column;
   }
+
   &__icon-row {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
   }
+
   &__icon-label {
     font-size: 3.75rem;
     font-weight: $font-weight-medium;
     color: $color-dark;
     margin-right: auto;
   }
+
   h3 {
     font-size: clamp(1.5rem, 2vw, 2rem);
   }
 }
+
 .why-us-card {
   display: flex;
   flex-direction: column;
