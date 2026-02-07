@@ -1,4 +1,5 @@
 @use "variables" as *;
+
 @mixin container {
   width: min(100%, $max-width);
   margin-inline: auto;
@@ -6,11 +7,13 @@
     padding-inline: clamp(16px, 5vw, 48px);
   }
 }
+
 @mixin grid($cols) {
   display: grid;
   grid-template-columns: repeat($cols, minmax(0, 1fr));
   gap: $gap;
 }
+
 @mixin button-base {
   padding: 0.75em 1.25em;
   font-size: 1rem;
@@ -20,6 +23,7 @@
   font-family: $font-primary;
   transition: all 0.1s ease-in-out;
 }
+
 @mixin hover-active-bold-effect {
   @media (hover: hover) {
     &:hover {
@@ -34,6 +38,7 @@
     box-shadow: none;
   }
 }
+
 @mixin card-bold-base {
   border: 1px solid $color-dark;
   box-shadow: $shadow-bold;
@@ -41,20 +46,24 @@
   border-radius: 45px;
   transition: all 0.1s ease-in-out;
 }
+
 @mixin transition-base($property: all, $duration: $transition-base) {
   transition: $property $duration;
 }
+
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 @mixin scrollbar-hide {
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
   }
 }
+
 @mixin text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;

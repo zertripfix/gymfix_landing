@@ -1,20 +1,18 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .contact {
-  padding-bottom: clamp(3rem, 8vw, 5rem);
-  &__container {
-    margin: 0 auto;
-    padding: $padding-container;
-    background: $color-dark;
-    border-radius: $radius-xxl;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $gap-md;
+  padding: $padding-container;
+  margin-bottom: clamp(3rem, 8vw, 5rem);
+  background: $color-dark;
+  border-radius: $radius-xxl;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $gap-md;
 
-    @media (min-width: $breakpoint-tablet) {
-      grid-template-columns: 1fr 1fr;
-      gap: $gap-lg;
-    }
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+    gap: $gap-lg;
   }
 
   &__info {
@@ -23,6 +21,7 @@
     gap: $gap-md;
     color: $color-surface;
 
+    // Info section on mobile should be below form
     @media (max-width: $breakpoint-tablet) {
       order: 2;
     }
@@ -33,7 +32,6 @@
     font-size: $h3-size-base;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
-    margin: 0;
     color: $color-surface;
   }
 
@@ -44,8 +42,7 @@
   }
 
   &__icon {
-    flex-shrink: 0;
-    background: $color-white-10;
+    background: $color-form-bg;
     border-radius: $radius-md;
     display: flex;
     align-items: center;
@@ -71,7 +68,7 @@
 
   &__value {
     font-family: $font-primary;
-    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-size: $font-base;
     font-weight: $font-weight-semibold;
     color: $color-surface;
   }
@@ -87,7 +84,7 @@
   }
 
   &__social-link {
-    background: $color-white-10;
+    background: $color-form-bg;
     border-radius: $radius-md;
     display: flex;
     align-items: center;
@@ -102,21 +99,18 @@
     }
   }
 
-  &__form-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
 
   &__form {
     display: flex;
-    height: 100%;
     flex-direction: column;
-    gap: clamp(1rem, 2vw, 1.25rem);
     background: $color-form-bg;
     border-radius: $radius-xl;
-    padding: clamp(1rem, 2vw, 1.25rem);
+    height: 100%;
+    gap: clamp(1rem, 1vw, 1.25rem);
+    padding: clamp(1rem, 1vw, 1.25rem);
   }
 
+  // TODO: maybe add labels in the future
   &__form-group {
     display: flex;
     flex-direction: column;
@@ -131,16 +125,16 @@
     border-radius: $radius-md;
     color: $color-surface;
     font-family: $font-primary;
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-size: $font-base;
     font-weight: $font-weight-medium;
-    transition: all $transition-base;
+    @include transition-base();
 
     &::placeholder {
       color: $color-white-50;
     }
 
     &:focus {
-      outline: none;
+      // outline: none;
       background: $color-white-08;
       border-color: $color-white-20;
     }
@@ -159,8 +153,6 @@
     overflow-y: auto;
     min-height: 150px;
     height: 100%;
-    box-sizing: border-box;
-    font-family: $font-primary;
   }
 
   @media (max-width: $breakpoint-mobile) {

@@ -53,20 +53,6 @@ h6 {
   line-height: 1.2;
 }
 
-h1 {
-  font-size: clamp(2rem, 4vw, 3.75rem);
-  font-weight: 500;
-}
-
-h2 {
-  font-weight: 600;
-  font-size: calc(clamp(2rem, 4vw, 3.75rem) * 0.75);
-}
-
-strong {
-  font-weight: 700;
-}
-
 nav {
   height: 68px;
   display: flex;
@@ -234,7 +220,7 @@ nav .close-sidebar-button {
 }
 .hero h1 {
   order: 1;
-  font-size: clamp(32px, 5vw, 60px);
+  font-size: clamp(2rem, 5vw, 3.75rem);
   text-align: left;
 }
 .hero__image {
@@ -282,7 +268,7 @@ nav .close-sidebar-button {
   }
   .hero h1 {
     margin-bottom: 10px;
-    font-size: clamp(40px, 4vw, 60px);
+    font-size: clamp(2.5rem, 4vw, 3.75rem);
   }
   .hero__actions {
     justify-content: flex-start;
@@ -314,79 +300,71 @@ nav .close-sidebar-button {
 .footer {
   background-color: #f9fafb;
   color: #222222;
-  margin-top: auto;
   padding-block: 4rem 1.5rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-.footer__container {
   width: min(100%, 1200px);
   margin-inline: auto;
 }
 @media (max-width: 1248px) {
-  .footer__container {
+  .footer {
     padding-inline: clamp(16px, 5vw, 48px);
   }
 }
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: clamp(2rem, 3vw, 2.5rem);
-  margin-bottom: 3rem;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
-@media (max-width: 769px) {
+@media (min-width: 769px) {
   .footer__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: clamp(2rem, 3vw, 2.5rem);
     text-align: left;
-    gap: 3rem;
-  }
-}
-@media (max-width: 560px) {
-  .footer__grid {
-    text-align: center;
   }
 }
 .footer__column.branding {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: center;
 }
-@media (max-width: 560px) {
+@media (min-width: 769px) {
   .footer__column.branding {
-    align-items: center;
+    align-items: flex-start;
   }
 }
 .footer__logo img {
   height: 48px;
   width: auto;
 }
-.footer__desc {
+.footer__description {
   opacity: 0.7;
   line-height: 1.5;
   max-width: 320px;
-  font-size: 0.95rem;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
 }
 .footer__heading {
   font-family: "Alumni Sans SC", sans-serif;
-  font-size: 1.5rem;
+  font-size: clamp(1.35rem, 2vw, 1.875rem);
   font-weight: 700;
   color: #191a23;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 .footer__links {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: clamp(0.625rem, 0.5vw, 1rem);
 }
 .footer__links li a {
   color: rgba(34, 34, 34, 0.8);
-  text-decoration: none;
   font-weight: 500;
+  font-size: clamp(0.875rem, 1vw, 1rem);
   transition: all 0.2s ease;
-  font-size: 0.95rem;
 }
 .footer__links li a:hover {
   color: #191a23;
@@ -399,12 +377,11 @@ nav .close-sidebar-button {
 }
 .footer__bottom p {
   opacity: 0.5;
-  font-size: 0.875rem;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
 }
 
 .brands-carousel {
   padding: clamp(2rem, 3vw, 2.5rem) 0;
-  background-color: var(--color-background);
   overflow: hidden;
   position: relative;
 }
@@ -412,26 +389,25 @@ nav .close-sidebar-button {
   content: "";
   position: absolute;
   top: 0;
-  width: 100px;
+  width: clamp(30px, 16vw, 100px);
   height: 100%;
   z-index: 2;
   pointer-events: none;
 }
 .brands-carousel::before {
   left: 0;
-  background: linear-gradient(to right, var(--color-background), transparent);
+  background: linear-gradient(to right, #f9fafb, transparent);
 }
 .brands-carousel::after {
   right: 0;
-  background: linear-gradient(to left, var(--color-background), transparent);
+  background: linear-gradient(to left, #f9fafb, transparent);
 }
 .brands-carousel__track {
   display: flex;
   align-items: center;
-  gap: 60px;
   width: -moz-max-content;
   width: max-content;
-  animation: scroll 30s linear infinite;
+  animation: scroll 20s linear infinite;
 }
 .brands-carousel__track:hover {
   animation-play-state: paused;
@@ -440,6 +416,7 @@ nav .close-sidebar-button {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 60px;
   height: 40px;
 }
 .brands-carousel__item img {
@@ -495,7 +472,7 @@ nav .close-sidebar-button {
 }
 .reviews-container .google-summary__logo-row {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -529,27 +506,6 @@ nav .close-sidebar-button {
   color: #f4b400;
   letter-spacing: 2px;
 }
-.reviews-container .google-summary .google-btn {
-  background-color: #f4b400;
-  color: black;
-  font-weight: 600;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  font-family: "Montserrat Alternates", sans-serif;
-}
-.reviews-container .google-summary .google-btn:hover {
-  opacity: 0.9;
-}
-@media (max-width: 560px) {
-  .reviews-container .google-summary .google-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
 .reviews-container .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -571,73 +527,10 @@ nav .close-sidebar-button {
     overflow-x: scroll;
   }
 }
-.reviews-container .review-card {
-  scroll-snap-align: start;
-  background-color: #3c3d42;
-  border-radius: 20px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.reviews-container .review-card__header {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-.reviews-container .review-card__header .avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.reviews-container .review-card__header .avatar img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.reviews-container .review-card__header .meta {
-  display: flex;
-  flex-direction: column;
-}
-.reviews-container .review-card__header .meta .name {
-  font-weight: 500;
-  font-size: 1rem;
-  color: white;
-}
-.reviews-container .review-card__header .meta .date {
-  font-size: 0.875rem;
-  color: #9aa0a6;
-}
-.reviews-container .review-card .stars {
-  color: #f4b400;
-  letter-spacing: 2px;
-  font-size: 1.25rem;
-}
-.reviews-container .review-card .review-text {
-  color: #e8eaed;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  flex-grow: 1;
-}
-.reviews-container .review-card .read-more {
-  color: #f29900;
-  text-decoration: none;
-  font-size: 0.95rem;
-  margin-top: auto;
-}
-.reviews-container .review-card .read-more:hover {
-  text-decoration: underline;
-}
 
 .contact {
-  padding-bottom: clamp(3rem, 8vw, 5rem);
-}
-.contact__container {
-  margin: 0 auto;
   padding: clamp(1.3rem, 4vw, 3.5rem);
+  margin-bottom: clamp(3rem, 8vw, 5rem);
   background: #191a23;
   border-radius: 45px;
   display: grid;
@@ -645,7 +538,7 @@ nav .close-sidebar-button {
   gap: clamp(1.5rem, 4vw, 3rem);
 }
 @media (min-width: 769px) {
-  .contact__container {
+  .contact {
     grid-template-columns: 1fr 1fr;
     gap: clamp(3rem, 5vw, 4rem);
   }
@@ -666,7 +559,6 @@ nav .close-sidebar-button {
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 700;
   text-transform: uppercase;
-  margin: 0;
   color: #ffffff;
 }
 .contact__item {
@@ -675,8 +567,7 @@ nav .close-sidebar-button {
   gap: clamp(0.5rem, 3vw, 1rem);
 }
 .contact__icon {
-  flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(55, 58, 62, 0.4);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -699,7 +590,7 @@ nav .close-sidebar-button {
 }
 .contact__value {
   font-family: "Montserrat Alternates", sans-serif;
-  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
   font-weight: 600;
   color: #ffffff;
 }
@@ -709,7 +600,7 @@ nav .close-sidebar-button {
   margin-top: clamp(1rem, 2vw, 1.5rem);
 }
 .contact__social-link {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(55, 58, 62, 0.4);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -722,18 +613,14 @@ nav .close-sidebar-button {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
-.contact__form-wrapper {
-  display: flex;
-  flex-direction: column;
-}
 .contact__form {
   display: flex;
-  height: 100%;
   flex-direction: column;
-  gap: clamp(1rem, 2vw, 1.25rem);
   background: rgba(55, 58, 62, 0.4);
   border-radius: 40px;
-  padding: clamp(1rem, 2vw, 1.25rem);
+  height: 100%;
+  gap: clamp(1rem, 1vw, 1.25rem);
+  padding: clamp(1rem, 1vw, 1.25rem);
 }
 .contact__form-group {
   display: flex;
@@ -747,7 +634,7 @@ nav .close-sidebar-button {
   border-radius: 20px;
   color: #ffffff;
   font-family: "Montserrat Alternates", sans-serif;
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
   font-weight: 500;
   transition: all 0.2s ease;
 }
@@ -758,7 +645,6 @@ nav .close-sidebar-button {
   color: rgba(255, 255, 255, 0.5);
 }
 .contact__input:focus, .contact__textarea:focus {
-  outline: none;
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.2);
 }
@@ -773,8 +659,6 @@ nav .close-sidebar-button {
   overflow-y: auto;
   min-height: 150px;
   height: 100%;
-  box-sizing: border-box;
-  font-family: "Montserrat Alternates", sans-serif;
 }
 @media (max-width: 560px) {
   .contact img {
@@ -899,7 +783,7 @@ nav .close-sidebar-button {
   background-color: #fd0;
 }
 .btn.submit {
-  background: #191a23;
+  background: rgba(55, 58, 62, 0.4);
   color: #fd0;
   border: 2px solid #fd0;
   border-radius: 45px;
@@ -920,6 +804,31 @@ nav .close-sidebar-button {
   filter: brightness(0.85);
   background-color: #fd0;
   color: #000;
+}
+.btn.google-review {
+  background-color: #f4b400;
+  color: #000;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 5px 5px 0px 0 #191a23;
+}
+@media (hover: hover) {
+  .btn.google-review:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    filter: brightness(1.15);
+  }
+}
+.btn.google-review:active {
+  transform: translate(5px, 5px);
+  filter: brightness(0.85);
+  box-shadow: none;
+}
+@media (max-width: 560px) {
+  .btn.google-review {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .trainer-card {
@@ -1000,7 +909,6 @@ nav .close-sidebar-button {
 .stages-card {
   display: flex;
   flex-direction: column;
-  max-width: 36.25rem;
   gap: clamp(1rem, 1vw, 1.25rem);
   background: #f3f3f3;
   border: 1px solid #191a23;
@@ -1044,6 +952,63 @@ nav .close-sidebar-button {
 }
 .why-us-card p {
   font-size: clamp(1rem, 0.8vw, 1.125rem);
+}
+
+.review-card {
+  scroll-snap-align: start;
+  background-color: #3c3d42;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.review-card__header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.review-card__header .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.review-card__header .avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.review-card__header .meta {
+  display: flex;
+  flex-direction: column;
+}
+.review-card__header .meta .name {
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+}
+.review-card__header .meta .date {
+  font-size: 0.875rem;
+  color: #9aa0a6;
+}
+.review-card .stars {
+  color: #f4b400;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+}
+.review-card .review-text {
+  color: #e8eaed;
+  font-size: 0.95rem;
+}
+.review-card .read-more {
+  color: #f29900;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+.review-card .read-more:hover {
+  text-decoration: underline;
 }
 
 .label {

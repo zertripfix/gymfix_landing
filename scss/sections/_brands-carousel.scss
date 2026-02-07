@@ -1,43 +1,52 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+
 .brands-carousel {
   padding: $gap 0;
-  background-color: var(--color-background);
   overflow: hidden;
   position: relative;
+
+  // Fade effect
   &::before,
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    width: 100px;
+    width: clamp(30px, 16vw, 100px);
     height: 100%;
     z-index: 2;
     pointer-events: none;
   }
+
   &::before {
     left: 0;
-    background: linear-gradient(to right, var(--color-background), transparent);
+    background: linear-gradient(to right, $color-bg, transparent);
   }
+
   &::after {
     right: 0;
-    background: linear-gradient(to left, var(--color-background), transparent);
+    background: linear-gradient(to left, $color-bg, transparent);
   }
+
   &__track {
     display: flex;
     align-items: center;
-    gap: 60px;
+    // gap: 60px;
     width: max-content;
-    animation: scroll 30s linear infinite;
+    animation: scroll 20s linear infinite;
+
     &:hover {
       animation-play-state: paused;
     }
   }
+
   &__item {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 60px;
     height: 40px;
+
     img {
       height: 100%;
       width: auto;
@@ -45,6 +54,7 @@
       opacity: 0.6;
       filter: grayscale(100%);
       @include transition-base(all, $transition-slow);
+
       &:hover {
         opacity: 1;
         filter: grayscale(0%);
@@ -52,6 +62,7 @@
     }
   }
 }
+
 @keyframes scroll {
   0% {
     transform: translateX(0);

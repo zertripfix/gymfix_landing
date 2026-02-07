@@ -25,6 +25,7 @@ $breakpoint-desktop: 1024px;
 $gap: clamp(2rem, 3vw, 2.5rem);
 
 // Typography scale
+$font-sm: clamp(0.875rem, 1vw, 1rem);
 $font-base: clamp(1rem, 1.2vw, 1.125rem);
 $font-lg: clamp(2rem, 4vw, 3.75rem);
 
@@ -36,6 +37,7 @@ $color-accent: #fd0; // CTA / highlight
 $color-dark: #191a23;
 $color-black: #000;
 $color-grey: #898989;
+$color-white: #fff;
 
 // Color palette - Labels & Cards
 $color-label-yellow: #fffc99;
@@ -50,13 +52,7 @@ $color-reviews-text: #e8eaed;
 $color-reviews-text-muted: #9aa0a6;
 $color-reviews-link: #f29900;
 
-// Color palette - Google brand colors
-$color-google-blue: #4285f4;
-$color-google-red: #db4437;
-$color-google-yellow: #f4b400;
-$color-google-green: #0f9d58;
-
-// Color palette - Utility
+// Color palette - Utility (used in contact section)
 $color-white-05: rgba(255, 255, 255, 0.05);
 $color-white-08: rgba(255, 255, 255, 0.08);
 $color-white-10: rgba(255, 255, 255, 0.1);
@@ -78,8 +74,8 @@ $gap-heading: clamp(2rem, 3.5vw, 2.5rem);
 $margin-section: 5rem;
 
 // Typography scale (Clamp values)
-$h1-size-base: clamp(32px, 5vw, 60px);
-$h1-size-tablet: clamp(40px, 4vw, 60px);
+$h1-size-base: clamp(2rem, 5vw, 3.75rem);
+$h1-size-tablet: clamp(2.5rem, 4vw, 3.75rem);
 $h2-size-base: clamp(1.35rem, 2vw, 1.875rem);
 $h3-size-base: clamp(1.25rem, 2.5vw, 1.5rem);
 
