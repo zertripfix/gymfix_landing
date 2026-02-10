@@ -22,6 +22,8 @@
     width: fit-content;
     align-self: center;
     height: fit-content;
+    padding-block: clamp(1rem, 2vw, 1.25rem);
+    padding-inline: clamp(1.25rem, 2vw, 1.875rem);
 
     @media (hover: hover) {
       &:hover {
@@ -74,5 +76,18 @@
       width: 100%;
       text-align: center;
     }
+  }
+
+  &.back {
+    display: flex;
+    background: transparent;
+    color: $color-text;
+    border: none;
+    font-weight: $font-weight-semibold;
+    align-self: end;
+    padding: 1rem;
+    align-items: center;
+    gap: $gap-xs;
+    // margin: 0;
   }
 }

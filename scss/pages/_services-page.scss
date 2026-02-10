@@ -1,0 +1,229 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.services-hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  // gap: $gap;
+  &__back-button {
+    display: none;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    &__back-button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      // gap: $gap-sm;
+      // height: clamp(32px, 6vw, 80px);
+    }
+  }
+}
+
+.services-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+  padding-block: clamp(32px, 6vw, 80px);
+
+  &__content {
+    display: contents;
+  }
+
+  h1 {
+    order: 1;
+    font-size: $h1-size-base;
+    text-align: left;
+  }
+  &__image {
+    order: 2;
+    margin-block: 40px;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  p {
+    order: 3;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  &__actions {
+    order: 4;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr 2fr;
+    gap: $gap;
+    text-align: left;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: $h1-size-tablet;
+    }
+
+    &__actions {
+      justify-content: flex-start;
+      // margin-top: auto;
+    }
+
+    &__image {
+      order: unset;
+      margin-block: 0;
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    background-color: $color-bg-grey;
+    border-radius: $radius-lg;
+    padding: clamp(32px, 3vw, 60px);
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $gap;
+  justify-content: center;
+  height: fit-content;
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(4, 1fr);
+    // gap: $gap-sm;
+    #repair-card {
+      grid-column: 1 / span 2;
+    }
+    #maintance-card {
+      grid-column: 3 / span 2;
+    }
+    #diagnostic-card {
+      grid-column: 2 / span 2;
+    }
+  }
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gap;
+    #repair-card {
+      grid-column: 1;
+    }
+    #maintance-card {
+      grid-column: 2;
+    }
+    #diagnostic-card {
+      grid-column: 3;
+    }
+  }
+}
+
+.for-whom-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (max-width: $breakpoint-tablet) {
+    gap: $gap;
+  }
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    @include card-bold-base;
+
+    .card-bottom-border {
+      display: none;
+    }
+
+    #for-whom-card-1 {
+      border-bottom: $border-dashed;
+      border-right: $border-dashed;
+    }
+    #for-whom-card-2 {
+      border-bottom: $border-dashed;
+      border-right: $border-dashed;
+    }
+    #for-whom-card-3 {
+      border-bottom: $border-dashed;
+    }
+    #for-whom-card-4 {
+      border-right: $border-dashed;
+    }
+    #for-whom-card-5 {
+      border-right: $border-dashed;
+    }
+  }
+}
+
+.map-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $gap;
+  justify-content: center;
+  height: fit-content;
+  background-color: $color-bg-grey;
+  border-radius: $radius-lg;
+  padding: clamp(32px, 3vw, 60px);
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  &__content {
+    display: contents;
+    gap: $gap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img {
+    order: 2;
+  }
+  #map-heading {
+    order: 1;
+  }
+  #map-text {
+    order: 4;
+  }
+  h3 {
+    order: 3;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: 1fr 1fr;
+
+    &__content {
+      display: flex;
+      text-align: left;
+    }
+    img,
+    #map-heading,
+    #map-text,
+    h3 {
+      order: unset;
+    }
+  }
+}

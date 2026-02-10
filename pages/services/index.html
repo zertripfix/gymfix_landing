@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gymfix</title>
-    <link rel="stylesheet" href="../../scss/styles.css" />
-    <script type="text/javascript" src="../../app.js" defer></script>
+    <link rel="stylesheet" href="/scss/styles.css" />
+    <script type="text/javascript" src="/app.js" defer></script>
 </head>
 
 <body>
@@ -15,23 +15,23 @@
             <input type="checkbox" id="sidebar-active" />
 
             <div class="logo">
-                <a href="../../index.html" class="logo-link">
-                    <img src="../../images/logo.svg" alt="Gymfix" />
+                <a href="/index.html" class="logo-link">
+                    <img src="/images/logo.svg" alt="Gymfix" />
                 </a>
             </div>
             <label for="sidebar-active" id="overlay"></label>
             <label for="sidebar-active" class="open-sidebar-button">
-                <img src="../../images/icons/menu.svg" alt="Menu" width="32" height="32">
+                <img src="/images/icons/menu.svg" alt="Menu" width="32" height="32">
             </label>
 
             <div class="links-container">
                 <label for="sidebar-active" class="close-sidebar-button">
-                    <img src="../../images/icons/close.svg" alt="Close" width="32" height="32">
+                    <img src="/images/icons/close.svg" alt="Close" width="32" height="32">
                 </label>
 
-                <a href="../../pages/services/" class="nav-link active">Послуги</a>
-                <a href="../../pages/about/" class="nav-link">Про нас</a>
-                <a href="../../pages/contact/" class="nav-link">Контакти</a>
+                <a href="/pages/services/" class="nav-link active">Послуги</a>
+                <a href="/pages/about/" class="nav-link">Про нас</a>
+                <a href="/pages/contact/" class="nav-link">Контакти</a>
                 <a href="#" class="btn secondary" id="nav-btn">Викликати майстра</a>
             </div>
         </div>
@@ -39,7 +39,75 @@
 
     <main class="main">
         <!-- Hero -->
+        <div class="services-hero-wrapper">
+            <div class="services-hero-wrapper__back-button">
 
+                <button class="btn back" onclick="history.back()"><img src="/images/icons/back.svg" alt="Back"
+                        width="12" height="24">Назад</button>
+            </div>
+
+            <section class="services-hero">
+                <div class="services-hero__image">
+                    <img src="/images/services_page_icons/services.svg" alt="Product preview" />
+                </div>
+
+                <div class="services-hero__content">
+
+                    <h1>Послуги з ремонту та обслуговування тренажерів</h1>
+                    <p>
+                        Комплексні рішення для домашніх і професійних тренажерів </p>
+
+                    <div class="services-hero__actions">
+                        <button class="btn primary">Отримати консультацію</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Repair and Maintance cards -->
+        <div class="section-wrapper">
+            <section class="heading-subheading">
+                <div class="heading-subheading__labels">
+                    <h2 class="label yellow">Комплексний сервіс</h2>
+                    <h2 class="label yellow">тренажерів</h2>
+                </div>
+
+                <p>Від діагностики до повного відновлення обладнання</p>
+            </section>
+
+            <div class="services-grid">
+                <div class="services-card" id="repair-card">
+                    <div class="services-card__content">
+                        <h2 class="services-card__title">Ремонт тренажерів</h2>
+                        <p class="services-card__description">Домашні та професійні тренажери різних типів і призначення
+                        </p>
+                    </div>
+                    <div class="services-card__image">
+                        <img src="/images/services_page_icons/repair.svg" alt="Repair" />
+                    </div>
+                </div>
+                <div class="services-card" id="maintance-card">
+                    <div class="services-card__content">
+                        <h2 class="services-card__title">Обслуговування і профілактика</h2>
+                        <p class="services-card__description">Запобігаємо поломкам та продовжуємо ресурс обладнання
+                        </p>
+                    </div>
+                    <div class="services-card__image">
+                        <img src="/images/services_page_icons/maintance.svg" alt="Repair" />
+                    </div>
+                </div>
+                <div class="services-card" id="diagnostic-card">
+                    <div class="services-card__content">
+                        <h2 class="services-card__title">Діагностика та підбір рішень</h2>
+                        <p class="services-card__description">Визначаємо причину несправності та пропонуємо оптимальний
+                            варіант ремонту</p>
+                    </div>
+                    <div class="services-card__image">
+                        <img src="/images/services_page_icons/diagnostic.svg" alt="Repair" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- What we repair -->
         <div class="section-wrapper">
@@ -51,122 +119,195 @@
             <!-- Cards -->
             <section class="trainers-grid">
 
-                <div class="trainer-card grey" id="treadmills-card">
+                <a href="/pages/trainers/treadmill.html" class="trainer-card grey" id="treadmills-card">
                     <div class="trainer-card__heading">
                         <div class="trainer-card__labels">
                             <div class="label yellow">Бігові</div>
                             <div class="label yellow">доріжки</div>
                         </div>
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon">
+                            <img src="/images/link.svg" alt="link" class="icon">
                             <p>Дізнатись більше</p>
                         </div>
                     </div>
 
                     <div class="trainer-card__image">
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon">
+                            <img src="/images/link.svg" alt="link" class="icon">
                         </div>
-                        <img src="images/trainers/treadmill.svg" alt="Product preview" />
+                        <img src="/images/trainers/treadmill.svg" alt="Product preview" />
                     </div>
-                </div>
+                </a>
 
-                <div class="trainer-card yellow" id="station-card">
+                <a href="/pages/trainers/station.html" class="trainer-card yellow" id="station-card">
                     <div class="trainer-card__heading">
                         <div class="trainer-card__labels">
                             <div class="label">Силові та блочні</div>
                             <div class="label">тренажери</div>
                         </div>
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon-label__icon">
+                            <img src="/images/link.svg" alt="link" class="icon-label__icon">
                             <p>Дізнатись більше</p>
                         </div>
                     </div>
 
                     <div class="trainer-card__image">
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon">
+                            <img src="/images/link.svg" alt="link" class="icon">
                         </div>
-                        <img src="images/trainers/station.svg" alt="Product preview" />
+                        <img src="/images/trainers/station.svg" alt="Product preview" />
                     </div>
-                </div>
+                </a>
 
-                <div class="trainer-card yellow" id="elliptical-card">
+                <a href="/pages/trainers/elliptical.html" class="trainer-card yellow" id="elliptical-card">
                     <div class="trainer-card__heading">
                         <div class="trainer-card__labels">
                             <div class="label">Еліптичні</div>
                             <div class="label">тренажери</div>
                         </div>
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon-label__icon">
+                            <img src="/images/link.svg" alt="link" class="icon-label__icon">
                             <p>Дізнатись більше</p>
                         </div>
                     </div>
 
                     <div class="trainer-card__image">
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon">
+                            <img src="/images/link.svg" alt="link" class="icon">
                         </div>
-                        <img src="images/trainers/elliptical.svg" alt="Product preview" />
+                        <img src="/images/trainers/elliptical.svg" alt="Product preview" />
                     </div>
-                </div>
+                </a>
 
-                <div class="trainer-card grey" id="bicycle-card">
+                <a href="/pages/trainers/bicycle.html" class="trainer-card grey" id="bicycle-card">
                     <div class="trainer-card__heading">
                         <div class="label yellow">Велотренажери</div>
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon-label__icon">
+                            <img src="/images/link.svg" alt="link" class="icon-label__icon">
                             <p>Дізнатись більше</p>
                         </div>
                     </div>
 
                     <div class="trainer-card__image">
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon">
+                            <img src="/images/link.svg" alt="link" class="icon">
                         </div>
-                        <img src="images/trainers/bicycle.svg" alt="Product preview" />
+                        <img src="/images/trainers/bicycle.svg" alt="Product preview" />
                     </div>
 
-                </div>
+                </a>
 
-                <div class="trainer-card grey" id="stepper-card">
+                <a href="/pages/trainers/stepper.html" class="trainer-card grey" id="stepper-card">
                     <div class="trainer-card__heading">
                         <div class="label yellow">Степпери</div>
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon-label__icon">
+                            <img src="/images/link.svg" alt="link" class="icon-label__icon">
                             <p>Дізнатись більше</p>
                         </div>
                     </div>
                     <div class="trainer-card__image">
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon">
+                            <img src="/images/link.svg" alt="link" class="icon">
                         </div>
-                        <img src="images/trainers/stepper.svg" alt="Product preview" />
+                        <img src="/images/trainers/stepper.svg" alt="Product preview" />
                     </div>
-                </div>
+                </a>
 
-                <div class="trainer-card yellow" id="other-card">
+                <a href="/pages/trainers/other.html" class="trainer-card yellow" id="other-card">
                     <div class="trainer-card__heading">
                         <div class="trainer-card__labels">
                             <div class="label">Інше</div>
                             <div class="label">обладнання</div>
                         </div>
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon-label__icon">
+                            <img src="/images/link.svg" alt="link" class="icon-label__icon">
                             <p>Дізнатись більше</p>
                         </div>
                     </div>
 
                     <div class="trainer-card__image">
                         <div class="icon-label">
-                            <img src="images/link.svg" alt="link" class="icon">
+                            <img src="/images/link.svg" alt="link" class="icon">
                         </div>
-                        <img src="images/trainers/other.svg" alt="Product preview" />
+                        <img src="/images/trainers/other.svg" alt="Product preview" />
                     </div>
+                </a>
+
+            </section>
+        </div>
+
+        <!-- For whom our services -->
+        <div class="section-wrapper">
+            <section class="heading-subheading">
+                <h2 class="label yellow">Для кого наші послуги</h2>
+                <p>Працюємо з приватними клієнтами та бізнесом</p>
+            </section>
+
+            <!-- Cards -->
+            <section class="for-whom-grid">
+                <div class="for-whom-card" id="for-whom-card-1">
+                    <img src="/images/for_whom_icons/home.svg" alt="">
+                    <h3>Домашні користувачі</h3>
+                    <p>Власники бігових доріжок та інших тренажерів для дому</p>
+                </div>
+
+                <div class="for-whom-card" id="for-whom-card-2">
+                    <img src="/images/for_whom_icons/dumbbell.svg" alt="">
+                    <h3>Фітнес-клуби та спортзали</h3>
+                    <p>Професійне обладнання для щоденного інтенсивного використання</p>
+                </div>
+
+                <div class="for-whom-card" id="for-whom-card-3">
+                    <img src="/images/for_whom_icons/sport.svg" alt="">
+                    <h3>Фітнес-студії</h3>
+                    <p>Студії групових занять, персональні зали, кросфіт-простори</p>
+                </div>
+
+                <div class="for-whom-card" id="for-whom-card-4">
+                    <img src="/images/for_whom_icons/heart.svg" alt="">
+                    <h3>Реабілітаційні центри</h3>
+                    <p>Обладнання для відновлення та лікувальної фізкультури</p>
+                </div>
+
+                <div class="for-whom-card" id="for-whom-card-5">
+                    <img src="/images/for_whom_icons/building.svg" alt="">
+                    <h3>Готелі та корпоративні зали</h3>
+                    <p>Спортзали для гостей, офісів та бізнес-центрів</p>
+                </div>
+
+                <div class="for-whom-card" id="for-whom-card-6">
+                    <img src="/images/for_whom_icons/school.svg" alt="">
+                    <h3>Навчальні та спортивні заклади</h3>
+                    <p>Школи, спортивні комплекси, секції</p>
                 </div>
 
             </section>
         </div>
+
+        <!-- Map -->
+        <div class="section-wrapper">
+            <section class="heading-subheading">
+                <h2 class="label yellow">Працюємо у вашому місті</h2>
+            </section>
+
+            <section class="map-grid">
+                <img src="/images/for_whom_icons/map.svg" alt="">
+                <div class="map-grid__content">
+                    <p id="map-heading">Надаємо послуги з ремонту та обслуговування тренажерів у таких містах:</p>
+                    <h3>Кривий Ріг, Дніпро, Кам’янське, Кропивницький, Миколаїв</h3>
+                    <p id="map-text">Маємо великий досвід роботи з тренажерами провідних світових брендів та обладнанням
+                        різного рівня
+                        складності.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Information card -->
+        <section class="information-card">
+            <img src="/images/icons/warning.svg" alt="">
+            <p>Вартість виїзду залежить від міста та відстані. Для віддалених регіонів розрахунок здійснюється
+                індивідуально — зв’яжіться з нами для уточнення</p>
+        </section>
 
         <!-- Contact us -->
         <div class="section-wrapper">
@@ -174,156 +315,118 @@
                 <h2 class="label yellow">Зв`язатись з нами</h2>
             </section>
 
-            <!-- Block -->
             <section class="contact">
-                <div class="contact__container">
-                    <!-- Left Side: Contact Info -->
-                    <div class="contact__info">
-                        <h3 class="contact__title">Контакти</h3>
 
-                        <div class="contact__item">
-                            <div class="contact__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </div>
-                            <div class="contact__details">
-                                <div class="contact__label">місто</div>
-                                <div class="contact__value">Кривий Ріг</div>
-                            </div>
+                <!-- Left Side: Contact Info -->
+                <div class="contact__info">
+                    <h3 class="contact__title">Контакти</h3>
+
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <img src="/images/contact_icons/location.svg" alt="">
                         </div>
-
-                        <div class="contact__item">
-                            <div class="contact__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.45 8.19 3 7.65 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </div>
-                            <div class="contact__details">
-                                <div class="contact__label">телефон</div>
-                                <div class="contact__value">+380 99 433 33 33</div>
-                            </div>
-                        </div>
-
-                        <div class="contact__item">
-                            <div class="contact__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </div>
-                            <div class="contact__details">
-                                <div class="contact__label">email</div>
-                                <div class="contact__value">zertripfix@gmail.com</div>
-                            </div>
-                        </div>
-
-                        <div class="contact__socials">
-                            <a href="#" class="contact__social-link" aria-label="Viber">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M11.4 0C9.473 0.028 6.372 0.44 3.907 2.906C2.232 4.579 1.468 6.956 1.414 9.788C1.36 12.62 1.355 17.355 7.798 19.006V21.483C7.798 21.483 7.755 22.552 8.497 22.776C9.393 23.048 9.896 22.161 11.084 20.788L13.046 18.548C17.698 18.937 21.147 17.852 21.564 17.685C22.481 17.326 23.85 16.241 24 13.267C24.156 10.173 23.734 7.667 22.262 5.677C21.032 3.992 18.655 2.517 14.945 2.042C14.945 2.042 13.939 1.887 13.954 2.292C13.969 2.697 14.935 2.754 14.935 2.754C17.818 3.13 19.785 4.245 20.799 5.596C21.813 6.947 22.147 8.998 22.028 11.548C21.909 14.098 20.826 14.942 20.076 15.23C19.726 15.371 16.816 16.228 12.932 15.962C12.932 15.962 10.21 19.229 9.291 20.19C9.091 20.398 8.866 20.383 8.872 19.991C8.878 19.742 8.885 16.563 8.885 16.563C3.638 15.212 4.043 11.298 4.088 9.054C4.133 6.81 4.764 4.858 6.122 3.496C8.157 1.456 10.716 1.106 12.399 1.082C16.521 1.025 20.218 2.287 21.485 4.315C22.751 6.343 23.039 9.138 22.922 11.944C22.805 14.75 21.532 15.923 20.512 16.32C19.896 16.553 16.503 17.509 12.119 17.077L9.574 19.976C9.574 19.976 9.268 20.369 8.872 20.19V17.077C3.507 15.705 3.689 11.944 3.728 9.488C3.767 7.032 4.293 5.362 5.535 4.117C7.648 1.999 10.716 1.678 12.399 1.653C16.912 1.587 20.807 2.93 22.174 5.115C23.541 7.3 23.851 10.282 23.723 13.267C23.595 16.252 22.174 17.532 21.062 17.98C20.39 18.239 16.718 19.294 12.132 18.832L9.309 22.021C9.309 22.021 8.955 22.464 8.497 22.264V18.832C2.232 17.215 2.501 12.62 2.546 9.788C2.591 6.956 3.325 4.879 4.864 3.337C7.329 0.871 10.509 0.497 12.399 0.466C17.455 0.394 21.751 1.87 23.268 4.315C24.785 6.76 25.116 9.982 24.967 13.267C24.818 16.552 23.241 17.98 21.982 18.476C21.212 18.771 17.127 19.953 12.132 19.456L8.872 23.073C8.872 23.073 8.459 23.564 7.949 23.342V19.456C1.063 17.685 1.36 12.62 1.409 9.788C1.458 6.956 2.247 4.579 4.031 2.793C6.757 0.066 10.245 -0.027 12.399 0.002L11.4 0Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a href="#" class="contact__social-link" aria-label="Telegram">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 8.8C16.49 10.38 15.84 14.22 15.51 15.99C15.37 16.74 15.09 16.99 14.82 17.02C14.25 17.07 13.81 16.64 13.25 16.27C12.37 15.69 11.87 15.33 11.02 14.77C10.03 14.12 10.67 13.76 11.24 13.18C11.39 13.03 13.95 10.7 14 10.49C14.0069 10.4582 14.006 10.4252 13.9973 10.3938C13.9886 10.3624 13.9724 10.3337 13.95 10.31C13.89 10.26 13.81 10.28 13.74 10.29C13.65 10.31 12.25 11.24 9.52 13.08C9.12 13.35 8.76 13.49 8.44 13.48C8.08 13.47 7.4 13.28 6.89 13.11C6.26 12.91 5.77 12.8 5.81 12.45C5.83 12.27 6.08 12.09 6.55 11.9C9.47 10.63 11.41 9.79 12.38 9.39C15.16 8.23 15.73 8.03 16.11 8.03C16.19 8.03 16.38 8.05 16.5 8.15C16.6 8.23 16.63 8.34 16.64 8.42C16.63 8.48 16.65 8.66 16.64 8.8Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a href="#" class="contact__social-link" aria-label="Instagram">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 17.7383 21.3889 19.2135 20.3012 20.3012C19.2135 21.3889 17.7383 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 6.26174 2.61107 4.78649 3.69878 3.69878C4.78649 2.61107 6.26174 2 7.8 2ZM7.6 4C6.64522 4 5.72955 4.37928 5.05442 5.05442C4.37928 5.72955 4 6.64522 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4C17.3548 20 18.2705 19.6207 18.9456 18.9456C19.6207 18.2705 20 17.3548 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6ZM17.25 5.5C17.5815 5.5 17.8995 5.6317 18.1339 5.86612C18.3683 6.10054 18.5 6.41848 18.5 6.75C18.5 7.08152 18.3683 7.39946 18.1339 7.63388C17.8995 7.8683 17.5815 8 17.25 8C16.9185 8 16.6005 7.8683 16.3661 7.63388C16.1317 7.39946 16 7.08152 16 6.75C16 6.41848 16.1317 6.10054 16.3661 5.86612C16.6005 5.6317 16.9185 5.5 17.25 5.5ZM12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 13.3261 16.4732 14.5979 15.5355 15.5355C14.5979 16.4732 13.3261 17 12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7ZM12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
+                        <div class="contact__details">
+                            <div class="contact__label">місто</div>
+                            <div class="contact__value">Кривий Ріг</div>
                         </div>
                     </div>
 
-                    <!-- Right Side: Form -->
-                    <div class="contact__form-wrapper">
-                        <form class="contact__form">
-                            <div class="contact__form-group">
-                                <input type="text" id="name" name="name" class="contact__input" placeholder="Ім'я"
-                                    required>
-                            </div>
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <img src="/images/contact_icons/phone.svg" alt="">
+                        </div>
+                        <div class="contact__details">
+                            <div class="contact__label">телефон</div>
+                            <div class="contact__value">+380 99 433 33 33</div>
+                        </div>
+                    </div>
 
-                            <div class="contact__form-group">
-                                <input type="tel" id="phone" name="phone" class="contact__input" placeholder="Телефон"
-                                    required>
-                            </div>
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <img src="/images/contact_icons/email.svg" alt="">
+                        </div>
+                        <div class="contact__details">
+                            <div class="contact__label">email</div>
+                            <div class="contact__value">zertripfix@gmail.com</div>
+                        </div>
+                    </div>
 
-                            <div class="contact__form-group">
-                                <textarea id="message" name="message" class="contact__textarea"
-                                    placeholder="Повідомлення" rows="5"></textarea>
-                            </div>
-
-                            <button type="submit" class="btn submit">Залишити заявку</button>
-                        </form>
+                    <div class="contact__socials">
+                        <a href="#" class="contact__social-link" aria-label="Viber">
+                            <img src="/images/contact_icons/viber.svg" alt="">
+                        </a>
+                        <a href="#" class="contact__social-link" aria-label="Telegram">
+                            <img src="/images/contact_icons/telegram.svg" alt="">
+                        </a>
+                        <a href="#" class="contact__social-link" aria-label="Instagram">
+                            <img src="/images/contact_icons/instagram.svg" alt="">
+                        </a>
                     </div>
                 </div>
+
+                <!-- Right Side: Form -->
+                <form class="contact__form">
+                    <div class="contact__form-group">
+                        <input type="text" id="name" name="name" class="contact__input" placeholder="Ім'я" required>
+                    </div>
+
+                    <div class="contact__form-group">
+                        <input type="tel" id="phone" name="phone" class="contact__input" placeholder="Телефон" required>
+                    </div>
+
+                    <div class="contact__form-group" id="message-form">
+                        <textarea id="message" name="message" class="contact__textarea" placeholder="Повідомлення"
+                            rows="5"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn submit">Залишити заявку</button>
+                </form>
             </section>
         </div>
 
     </main>
 
-
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__grid">
-                <!-- Branding -->
-                <div class="footer__column branding">
-                    <div class="footer__logo">
-                        <img src="images/logo.svg" alt="Gymfix" />
-                    </div>
-                    <p class="footer__desc">
-                        Професійний ремонт тренажерів. Швидко, якісно, з гарантією.
-                    </p>
-                </div>
+        <div class="footer__grid">
 
-                <!-- Links -->
-                <div class="footer__column">
-                    <h3 class="footer__heading">Посилання</h3>
-                    <ul class="footer__links">
-                        <li><a href="index.html">Головна</a></li>
-                        <li><a href="pages/services/">Послуги</a></li>
-                        <li><a href="pages/about/">Про нас</a></li>
-                        <li><a href="pages/contact/">Контакти</a></li>
-                    </ul>
+            <!-- Branding -->
+            <div class="footer__column branding">
+                <div class="footer__logo">
+                    <img src="/images/logo.svg" alt="Gymfix" />
                 </div>
-
-                <!-- Services -->
-                <div class="footer__column">
-                    <h3 class="footer__heading">Що ми ремонтуємо</h3>
-                    <ul class="footer__links">
-                        <li><a href="#treadmills-card">Бігові доріжки</a></li>
-                        <li><a href="#station-card">Силові тренажери</a></li>
-                        <li><a href="#elliptical-card">Еліптичні тренажери</a></li>
-                        <li><a href="#bicycle-card">Велотренажери</a></li>
-                        <li><a href="#stepper-card">Степпери</a></li>
-                        <li><a href="#other-card">Інше обладнання</a></li>
-                    </ul>
-                </div>
+                <p class="footer__description">
+                    Професійний ремонт тренажерів. Швидко, якісно, з гарантією.
+                </p>
             </div>
 
-            <div class="footer__bottom">
-                <p>© 2026 GymFix. All rights reserved.</p>
+            <!-- Links -->
+            <div class="footer__column">
+                <h3 class="footer__heading">Посилання</h3>
+                <ul class="footer__links">
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="pages/services/index.html">Послуги</a></li>
+                    <li><a href="pages/about/index.html">Про нас</a></li>
+                    <li><a href="pages/contact/index.html">Контакти</a></li>
+                </ul>
             </div>
+
+            <!-- Services -->
+            <div class="footer__column">
+                <h3 class="footer__heading">Що ми ремонтуємо</h3>
+                <ul class="footer__links">
+                    <li><a href="#treadmills">Бігові доріжки</a></li>
+                    <li><a href="#station">Силові тренажери</a></li>
+                    <li><a href="#elliptical">Еліптичні тренажери</a></li>
+                    <li><a href="#bicycle">Велотренажери</a></li>
+                    <li><a href="#stepper">Степпери</a></li>
+                    <li><a href="#other">Інше обладнання</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>© 2026 GymFix. All rights reserved.</p>
+        </div>
         </div>
     </footer>
 </body>

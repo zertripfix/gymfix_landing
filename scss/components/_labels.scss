@@ -1,7 +1,6 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 .label {
-  
   width: fit-content;
   background: $color-label-white;
   padding-inline: 7px;
