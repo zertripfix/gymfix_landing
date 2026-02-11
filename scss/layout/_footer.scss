@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-footer {
+.footer {
   background-color: $color-bg;
   color: $color-text;
   padding-block: 4rem 1.5rem;
